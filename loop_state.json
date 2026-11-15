@@ -48,5 +48,12 @@
   ],
   "last_updated": "2026-11-15T19:36:27Z",
   "folder_path": "C:\\Users\\Rose\\.gemini\\antigravity\\scratch\\Python Programming Training",
-  "duplicates_removed": true
+  "duplicates_removed": true,
+  "deployment": {
+    "github_repo": "https://github.com/Shivam990q/Python-Programming-Training",
+    "github_pages": "https://shivam990q.github.io/Python-Programming-Training/",
+    "colab_direct_link": "https://colab.research.google.com/github/Shivam990q/Python-Programming-Training/blob/main/Day1_Afternoon_List_Comprehensions_and_Strings.ipynb",
+    "visuals_link": "https://shivam990q.github.io/Python-Programming-Training/presentation_visuals.html",
+    "mcq_quiz_link": "https://shivam990q.github.io/Python-Programming-Training/interactive_mcq_quiz.html"
+  }
 }
