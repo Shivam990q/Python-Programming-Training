@@ -10,38 +10,58 @@
 
 ---
 
-## 📂 5-Day Curriculum Directory Structure
+## 📂 5-Day Master Curriculum Directory Structure
 ```text
 Python Programming Training/
 │
 ├── index.html                                        # 5-Day Interactive Master Portal & Launchpad (GitHub Pages)
 ├── Python.pdf                                        # Official GLA University 5-Day Curriculum Syllabus Document
 │
-├── Day 01 - Basics, Lists and Strings/               # Day 1: Full Interactive Module (100% Production Ready)
-│   ├── Day1_Afternoon_List_Comprehensions_and_Strings.ipynb # Master Google Colab Notebook (43 cells, 10 challenges)
-│   ├── presentation_visuals.html                     # 7 Interactive Visual Labs (Slicing, Comprehensions, Memory)
-│   ├── interactive_mcq_quiz.html                     # 40 Placement MCQs with instant pedagogical feedback & timer
-│   ├── Python_Day1_Afternoon_Training.pptx           # 24-Slide 16:9 Light-Themed Executive PowerPoint Presentation
+├── Day 01 - Basics, Lists and Strings/               # Day 1: List Comprehensions & Strings (100% Ready)
+│   ├── Day1_Afternoon_List_Comprehensions_and_Strings.ipynb # Google Colab Notebook (43 cells, 10 challenges)
+│   ├── presentation_visuals.html                     # 7 Interactive Visual Labs (Slicing Ruler, Memory Inspector)
+│   ├── interactive_mcq_quiz.html                     # 40 Placement MCQs Exam Engine with Timer & Feedback
+│   ├── Python_Day1_Afternoon_Training.pptx           # 24-Slide 16:9 Light-Themed Executive PowerPoint Deck
 │   ├── assets/                                       # Edulateral Foundation branding logos
-│   └── README.md                                     # Day 1 Trainer & Student Lesson Guide
+│   └── README.md                                     # Day 1 Lesson Plan & Traps Guide
 │
-├── Day 02 - Tuples, Sets, Dictionaries and Functions/# Day 2: Advanced Data Structures & Functional Programming
-│   └── README.md                                     # Day 2 Syllabus & Traps Guide (Tuples, Sets, Dicts, Map, Filter)
+├── Day 02 - Tuples, Sets, Dictionaries and Functions/# Day 2: Functions, Scope & Functional Programming (100% Ready)
+│   ├── Day2_Afternoon_Functions_Scope_and_Functional_Programming.ipynb # Colab Notebook (22 cells, 10 challenges)
+│   ├── presentation_visuals.html                     # 5 Visual Labs (LEGB Scope Ladder, Mutable Default Trap)
+│   ├── interactive_mcq_quiz.html                     # 40 Placement MCQs Exam Engine with Timer & Feedback
+│   ├── Python_Day2_Afternoon_Training.pptx           # 24-Slide 16:9 Light-Themed Executive PowerPoint Deck
+│   ├── assets/                                       # Edulateral Foundation branding logos
+│   └── README.md                                     # Day 2 Lesson Plan & Traps Guide
 │
-├── Day 03 - Recursion, Modules and Packages/         # Day 3: Algorithmic Thinking & Scientific Computing
-│   └── README.md                                     # Day 3 Syllabus & Traps Guide (Call Stack, OS, Random, NumPy)
+├── Day 03 - Recursion, Modules and Packages/         # Day 3: Built-ins, Modules & NumPy Vectorization (100% Ready)
+│   ├── Day3_Afternoon_Builtins_Modules_and_Scientific_Python.ipynb # Colab Notebook (22 cells, 10 challenges)
+│   ├── presentation_visuals.html                     # 5 Visual Labs (Namespace Inspector, Banker's Rounding, NumPy)
+│   ├── interactive_mcq_quiz.html                     # 40 Placement MCQs Exam Engine with Timer & Feedback
+│   ├── Python_Day3_Afternoon_Training.pptx           # 24-Slide 16:9 Light-Themed Executive PowerPoint Deck
+│   ├── assets/                                       # Edulateral Foundation branding logos
+│   └── README.md                                     # Day 3 Lesson Plan & Traps Guide
 │
-├── Day 04 - Exceptions and File Handling/            # Day 4: Production Resilience & Persistent I/O
-│   └── README.md                                     # Day 4 Syllabus & Traps Guide (Try-Except, Files, Binary I/O)
+├── Day 04 - Exceptions and File Handling/            # Day 4: File Handling & Data Persistence (100% Ready)
+│   ├── Day4_Afternoon_File_Handling_and_Persistence.ipynb # Colab Notebook (22 cells, 10 challenges)
+│   ├── presentation_visuals.html                     # 5 Visual Labs (seek/tell Tape, 8-Mode Matrix, CSV Parser)
+│   ├── interactive_mcq_quiz.html                     # 40 Placement MCQs Exam Engine with Timer & Feedback
+│   ├── Python_Day4_Afternoon_Training.pptx           # 24-Slide 16:9 Light-Themed Executive PowerPoint Deck
+│   ├── assets/                                       # Edulateral Foundation branding logos
+│   └── README.md                                     # Day 4 Lesson Plan & Traps Guide
 │
-├── Day 05 - Regex and Projects/                      # Day 5: Pattern Matching & 6 Capstone Placement Projects
-│   └── README.md                                     # Day 5 Syllabus & Traps Guide (re Module, 6 Capstone Projects)
+├── Day 05 - Regex and Projects/                      # Day 5: 6 Capstone Placement Projects Implementation (100% Ready)
+│   ├── Day5_Afternoon_Capstone_Placement_Projects.ipynb # Colab Notebook (25 cells, 6 complete projects)
+│   ├── presentation_visuals.html                     # 6 Interactive Project Simulators (Contact Book, ATM, etc.)
+│   ├── interactive_mcq_quiz.html                     # 40 Placement System Design MCQs with Timer & Feedback
+│   ├── Python_Day5_Afternoon_Training.pptx           # 24-Slide 16:9 Light-Themed Executive PowerPoint Deck
+│   ├── assets/                                       # Edulateral Foundation branding logos
+│   └── README.md                                     # Day 5 Specifications, Blueprints & Viva Guide
 │
 ├── [Root Golden Fallbacks for Direct URLs]:
-├── presentation_visuals.html                         # Root fallback for direct links & bookmarks
-├── interactive_mcq_quiz.html                         # Root fallback for direct links & bookmarks
-├── Day1_Afternoon_List_Comprehensions_and_Strings.ipynb # Root fallback for direct Colab launch
-└── Python_Day1_Afternoon_Training.pptx               # Root fallback for direct download
+├── presentation_visuals.html                         # Day 1 fallback for direct links & bookmarks
+├── interactive_mcq_quiz.html                         # Day 1 fallback for direct links & bookmarks
+├── Day1_Afternoon_List_Comprehensions_and_Strings.ipynb # Day 1 fallback for direct Colab launch
+└── Python_Day1_Afternoon_Training.pptx               # Day 1 fallback for direct download
 ```
 
 ---
