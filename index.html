@@ -9,18 +9,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #070d18;
-      --card-bg: rgba(15, 23, 42, 0.75);
-      --card-border: rgba(255, 255, 255, 0.08);
-      --card-hover-border: rgba(99, 102, 241, 0.5);
-      --text: #f8fafc;
-      --text-muted: #94a3b8;
-      --accent: #6366f1;
-      --accent-glow: rgba(99, 102, 241, 0.25);
-      --cyan: #06b6d4;
-      --emerald: #10b981;
-      --amber: #f59e0b;
-      --rose: #f43f5e;
+      /* DEFAULT: PROJECTOR-READY LIGHT MODE */
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --card-border: #e2e8f0;
+      --card-hover-border: #2563eb;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --accent: #2563eb;
+      --accent-glow: rgba(37, 99, 235, 0.12);
+      --cyan: #0284c7;
+      --emerald: #059669;
+      --amber: #d97706;
+      --rose: #dc2626;
     }
 
     * {
@@ -48,7 +49,7 @@
       transform: translateX(-50%);
       width: 1000px;
       height: 450px;
-      background: radial-gradient(circle, rgba(99, 102, 241, 0.18) 0%, rgba(6, 182, 212, 0.12) 40%, rgba(7, 13, 24, 0) 70%);
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, rgba(2, 132, 199, 0.05) 40%, rgba(248, 250, 252, 0) 70%);
       pointer-events: none;
       z-index: 0;
     }
@@ -59,7 +60,7 @@
       padding: 1.5rem 2rem;
       border-bottom: 1px solid var(--card-border);
       backdrop-filter: blur(12px);
-      background: rgba(7, 13, 24, 0.7);
+      background: rgba(255, 255, 255, 0.9);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -99,7 +100,7 @@
       font-size: 0.95rem;
       font-weight: 700;
       letter-spacing: 0.02em;
-      color: #ffffff;
+      color: #0f172a;
     }
 
     .institution-sub {
@@ -156,12 +157,12 @@
       align-items: center;
       gap: 0.5rem;
       padding: 0.4rem 1rem;
-      background: rgba(99, 102, 241, 0.1);
-      border: 1px solid rgba(99, 102, 241, 0.3);
+      background: rgba(37, 99, 235, 0.08);
+      border: 1px solid rgba(37, 99, 235, 0.25);
       border-radius: 9999px;
       font-size: 0.8rem;
       font-weight: 600;
-      color: #a5b4fc;
+      color: #2563eb;
       margin-bottom: 1.5rem;
     }
 
@@ -171,7 +172,7 @@
       letter-spacing: -0.03em;
       line-height: 1.15;
       margin-bottom: 1rem;
-      background: linear-gradient(135deg, #ffffff 30%, #a5b4fc 70%, #38bdf8 100%);
+      background: linear-gradient(135deg, #0f172a 30%, #2563eb 70%, #0284c7 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -194,13 +195,14 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      background: rgba(15, 23, 42, 0.8);
+      background: #ffffff;
       border: 1px solid var(--card-border);
       padding: 0.45rem 0.9rem;
       border-radius: 9999px;
       font-size: 0.8rem;
       font-weight: 600;
-      color: #cbd5e1;
+      color: #334155;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
 
     .stat-pill svg {
@@ -281,7 +283,7 @@
       font-size: 1.25rem;
       font-weight: 700;
       margin-bottom: 0.6rem;
-      color: #ffffff;
+      color: #0f172a;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -307,9 +309,9 @@
       font-family: 'Fira Code', monospace;
       padding: 0.25rem 0.55rem;
       border-radius: 6px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      color: #cbd5e1;
+      background: #f1f5f9;
+      border: 1px solid var(--card-border);
+      color: #334155;
     }
 
     .card-btn {
@@ -354,7 +356,7 @@
       font-size: 1.5rem;
       font-weight: 700;
       margin-bottom: 0.75rem;
-      color: #ffffff;
+      color: #0f172a;
       display: flex;
       align-items: center;
       gap: 0.75rem;
@@ -373,8 +375,8 @@
     }
 
     .timeline-item {
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      background: #ffffff;
+      border: 1px solid var(--card-border);
       border-radius: 12px;
       padding: 1.25rem;
     }
@@ -390,7 +392,7 @@
     .timeline-title {
       font-size: 0.95rem;
       font-weight: 700;
-      color: #f1f5f9;
+      color: #0f172a;
       margin-bottom: 0.5rem;
     }
 
@@ -402,7 +404,7 @@
 
     footer {
       border-top: 1px solid var(--card-border);
-      background: rgba(7, 13, 24, 0.8);
+      background: #ffffff;
       padding: 2rem;
       text-align: center;
       font-size: 0.85rem;
@@ -472,7 +474,7 @@
         </div>
         <div class="stat-pill">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          24 Presentation Slides
+          5 Interactive Visual Labs
         </div>
         <div class="stat-pill">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
@@ -495,20 +497,21 @@
 
     <!-- Action Cards Grid -->
     <div class="action-grid">
-      <!-- Card 1: Visual Presentation Deck -->
+      <!-- Card 1: 5 Interactive Visual Simulation Labs -->
       <a href="presentation_visuals.html" class="action-card card-slides">
-        <div class="card-header-icon icon-slides">🖥️</div>
-        <h2 class="card-title">Interactive Visual Deck <span>&rarr;</span></h2>
+        <div class="card-header-icon icon-slides">🧪</div>
+        <h2 class="card-title">Interactive Visual Labs <span>&rarr;</span></h2>
         <p class="card-desc">
-          24 high-craft slide modules covering syntax formulas, CPython bytecode pipelines, memory pointers, and 5 interactive simulation playgrounds.
+          5 live simulation playgrounds: Slicing Ruler coordinate visualizer, List Comp pipeline execution stream, CPython memory immutability, 23 string methods tester, and F-string studio.
         </p>
         <div class="feature-tags">
           <span class="feature-tag">Slicing Ruler Lab</span>
           <span class="feature-tag">List Comp Pipeline</span>
           <span class="feature-tag">Memory Immutability</span>
           <span class="feature-tag">23 Methods Studio</span>
+          <span class="feature-tag">F-String Formatter</span>
         </div>
-        <div class="card-btn btn-slides">Launch Visual Deck &bull; 24 Slides</div>
+        <div class="card-btn btn-slides">Launch 5 Visual Labs &bull; Light Mode</div>
       </a>
 
       <!-- Card 2: Interactive MCQ Quiz -->

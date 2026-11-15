@@ -9,25 +9,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-primary: #0b0f19;
-            --bg-secondary: #111827;
-            --bg-card: #1f2937;
-            --bg-card-hover: #263345;
-            --border-color: #374151;
-            --text-main: #f9fafb;
-            --text-muted: #9ca3af;
+            /* DEFAULT: PROJECTOR-READY LIGHT MODE */
+            --bg-primary: #f8fafc;
+            --bg-secondary: #ffffff;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f1f5f9;
+            --border-color: #e2e8f0;
+            --text-main: #0f172a;
+            --text-muted: #475569;
             --brand-blue: #2563eb;
             --brand-blue-light: #3b82f6;
-            --brand-gold: #f59e0b;
-            --brand-gold-light: #fbbf24;
-            --accent-green: #10b981;
-            --accent-green-bg: rgba(16, 185, 129, 0.15);
-            --accent-red: #ef4444;
-            --accent-red-bg: rgba(239, 68, 68, 0.15);
-            --accent-purple: #8b5cf6;
+            --brand-gold: #d97706;
+            --brand-gold-light: #f59e0b;
+            --accent-green: #059669;
+            --accent-green-bg: rgba(5, 150, 105, 0.12);
+            --accent-red: #dc2626;
+            --accent-red-bg: rgba(220, 38, 38, 0.12);
+            --accent-purple: #7c3aed;
             --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
             --font-mono: 'Fira Code', monospace;
-            --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
             --radius-md: 10px;
             --radius-lg: 16px;
         }
@@ -49,7 +50,7 @@
 
         /* Header */
         header {
-            background: rgba(17, 24, 39, 0.95);
+            background: var(--bg-secondary);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-color);
             padding: 0.75rem 2rem;
@@ -78,7 +79,7 @@
         .header-title-text h1 {
             font-size: 1.15rem;
             font-weight: 800;
-            color: #fff;
+            color: var(--text-main);
         }
 
         .header-title-text h1 span {
@@ -98,7 +99,7 @@
         }
 
         .timer-badge {
-            background: #0f172a;
+            background: var(--bg-primary);
             border: 1px solid var(--border-color);
             padding: 0.45rem 1rem;
             border-radius: 20px;
@@ -113,7 +114,7 @@
 
         .mode-toggle {
             display: flex;
-            background: #0f172a;
+            background: var(--bg-primary);
             border: 1px solid var(--border-color);
             border-radius: 20px;
             padding: 3px;
@@ -204,7 +205,7 @@
             align-items: center;
             margin-bottom: 1.25rem;
             padding-bottom: 0.75rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid var(--border-color);
         }
 
         .q-tag-group {
@@ -214,8 +215,8 @@
         }
 
         .q-num-pill {
-            background: #1e293b;
-            color: var(--brand-gold-light);
+            background: rgba(217, 119, 6, 0.1);
+            color: var(--brand-gold);
             font-family: var(--font-mono);
             font-size: 0.8rem;
             font-weight: 700;
@@ -257,7 +258,7 @@
             font-size: 1.12rem;
             font-weight: 600;
             line-height: 1.55;
-            color: #fff;
+            color: var(--text-main);
             margin-bottom: 1rem;
         }
 
@@ -303,7 +304,7 @@
             width: 28px;
             height: 28px;
             border-radius: 50%;
-            background: #111827;
+            background: var(--bg-primary);
             border: 1px solid var(--border-color);
             color: var(--text-muted);
             display: flex;
@@ -318,7 +319,7 @@
 
         .option-text {
             font-size: 0.95rem;
-            color: #e2e8f0;
+            color: var(--text-main);
             font-family: var(--font-mono);
             line-height: 1.45;
             flex: 1;
@@ -366,9 +367,9 @@
         .explanation-box {
             display: none;
             margin-top: 1.5rem;
-            background: #0f172a;
+            background: var(--bg-primary);
             border-radius: var(--radius-md);
-            border: 1px solid #334155;
+            border: 1px solid var(--border-color);
             padding: 1.25rem 1.5rem;
             animation: fadeIn 0.3s ease;
         }
@@ -397,13 +398,13 @@
         .explanation-body {
             font-size: 0.9rem;
             line-height: 1.6;
-            color: #cbd5e1;
+            color: var(--text-main);
         }
 
         .explanation-body code {
             font-family: var(--font-mono);
-            color: var(--brand-gold-light);
-            background: #1e293b;
+            color: var(--brand-blue);
+            background: rgba(37, 99, 235, 0.08);
             padding: 2px 6px;
             border-radius: 4px;
             font-size: 0.85rem;
