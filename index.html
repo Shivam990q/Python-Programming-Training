@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GLA University &bull; Python Programming Masterclass | Day 1 Training Portal</title>
+  <title>GLA University &bull; Python Programming Masterclass | 5-Day Curriculum Portal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       /* DEFAULT: PROJECTOR-READY LIGHT MODE */
@@ -22,12 +22,18 @@
       --emerald: #059669;
       --amber: #d97706;
       --rose: #dc2626;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -1px rgba(0,0,0,0.04);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -2px rgba(0,0,0,0.04);
+      --radius-md: 10px;
+      --radius-lg: 16px;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      transition: background-color 0.15s ease, border-color 0.15s ease;
     }
 
     body {
@@ -41,14 +47,14 @@
       position: relative;
     }
 
-    /* Ambient background lighting */
+    /* Top Ambient glow */
     .ambient-glow {
       position: absolute;
       top: 0;
       left: 50%;
       transform: translateX(-50%);
       width: 1000px;
-      height: 450px;
+      height: 380px;
       background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, rgba(2, 132, 199, 0.05) 40%, rgba(248, 250, 252, 0) 70%);
       pointer-events: none;
       z-index: 0;
@@ -57,16 +63,14 @@
     header {
       position: relative;
       z-index: 10;
-      padding: 1.5rem 2rem;
+      padding: 1rem 2rem;
       border-bottom: 1px solid var(--card-border);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(12px);
-      background: rgba(255, 255, 255, 0.9);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      max-width: 1300px;
-      margin: 0 auto;
-      width: 100%;
+      box-shadow: var(--shadow-sm);
     }
 
     .brand-group {
@@ -80,9 +84,10 @@
       width: auto;
       border-radius: 8px;
       object-fit: contain;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+      box-shadow: var(--shadow-sm);
       background: #ffffff;
-      padding: 3px;
+      padding: 2px;
+      border: 1px solid var(--card-border);
     }
 
     .brand-divider {
@@ -98,58 +103,59 @@
 
     .institution-name {
       font-size: 0.95rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      color: #0f172a;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      color: var(--text);
     }
 
     .institution-sub {
       font-size: 0.75rem;
       color: var(--text-muted);
-      font-weight: 500;
+      font-weight: 600;
     }
 
     .header-links {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.75rem;
     }
 
     .header-btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.55rem 1.1rem;
-      font-size: 0.85rem;
+      gap: 0.45rem;
+      padding: 0.5rem 0.9rem;
+      font-size: 0.82rem;
       font-weight: 600;
       color: var(--text);
-      background: rgba(255, 255, 255, 0.05);
+      background: #ffffff;
       border: 1px solid var(--card-border);
       border-radius: 8px;
       text-decoration: none;
-      transition: all 0.2s ease;
+      transition: all 0.15s ease;
+      box-shadow: var(--shadow-sm);
     }
 
     .header-btn:hover {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: rgba(255, 255, 255, 0.2);
+      border-color: var(--accent);
+      color: var(--accent);
       transform: translateY(-1px);
     }
 
     main {
       position: relative;
       z-index: 10;
-      max-width: 1300px;
+      max-width: 1350px;
       margin: 0 auto;
-      padding: 3rem 2rem 5rem;
+      padding: 2.5rem 2rem 5rem;
       flex: 1;
       width: 100%;
     }
 
     .hero-section {
       text-align: center;
-      max-width: 900px;
-      margin: 0 auto 3.5rem;
+      max-width: 950px;
+      margin: 0 auto 2.5rem;
     }
 
     .badge-bar {
@@ -161,16 +167,16 @@
       border: 1px solid rgba(37, 99, 235, 0.25);
       border-radius: 9999px;
       font-size: 0.8rem;
-      font-weight: 600;
-      color: #2563eb;
-      margin-bottom: 1.5rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
     }
 
     .hero-title {
-      font-size: 2.85rem;
+      font-size: 2.75rem;
       font-weight: 800;
       letter-spacing: -0.03em;
-      line-height: 1.15;
+      line-height: 1.18;
       margin-bottom: 1rem;
       background: linear-gradient(135deg, #0f172a 30%, #2563eb 70%, #0284c7 100%);
       -webkit-background-clip: text;
@@ -178,59 +184,172 @@
     }
 
     .hero-sub {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       color: var(--text-muted);
       line-height: 1.6;
-      margin-bottom: 2rem;
+      margin-bottom: 1.75rem;
     }
 
     .stats-pills {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 0.75rem;
+      gap: 0.65rem;
+      margin-bottom: 2rem;
     }
 
     .stat-pill {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.45rem;
       background: #ffffff;
       border: 1px solid var(--card-border);
-      padding: 0.45rem 0.9rem;
+      padding: 0.4rem 0.85rem;
       border-radius: 9999px;
       font-size: 0.8rem;
       font-weight: 600;
-      color: #334155;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      color: var(--text);
+      box-shadow: var(--shadow-sm);
     }
 
-    .stat-pill svg {
-      width: 15px;
-      height: 15px;
-      color: var(--cyan);
+    /* DAY SWITCHER TABS */
+    .day-nav-wrapper {
+      background: #ffffff;
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 0.45rem;
+      display: flex;
+      gap: 0.5rem;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 2.5rem;
+      overflow-x: auto;
     }
 
-    /* Grid of Master Action Cards */
+    .day-tab {
+      flex: 1;
+      min-width: 170px;
+      padding: 0.75rem 1rem;
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: var(--radius-md);
+      font-family: inherit;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+      transition: all 0.2s ease;
+    }
+
+    .day-tab:hover {
+      background: var(--bg);
+      border-color: var(--card-border);
+    }
+
+    .day-tab.active {
+      background: var(--accent);
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    }
+
+    .day-tab .day-num {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      opacity: 0.85;
+    }
+
+    .day-tab .day-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .day-tab .day-status {
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.15rem 0.45rem;
+      border-radius: 9999px;
+      margin-top: 0.25rem;
+    }
+
+    .day-tab.active .day-status {
+      background: rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+    }
+
+    .day-tab:not(.active) .day-status.ready {
+      background: rgba(5, 150, 105, 0.12);
+      color: var(--emerald);
+    }
+
+    .day-tab:not(.active) .day-status.upcoming {
+      background: rgba(217, 119, 6, 0.12);
+      color: var(--amber);
+    }
+
+    /* DAY PANELS */
+    .day-panel {
+      display: none;
+      animation: fadeIn 0.25s ease-out;
+    }
+
+    .day-panel.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .panel-header-banner {
+      background: #ffffff;
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 2rem;
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .panel-header-banner h2 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.3rem;
+    }
+
+    .panel-header-banner p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+
+    /* ACTION CARDS GRID */
     .action-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.75rem;
-      margin-bottom: 3.5rem;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
     }
 
     .action-card {
       position: relative;
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      border-radius: 16px;
-      padding: 2rem 1.75rem;
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
       display: flex;
       flex-direction: column;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      backdrop-filter: blur(12px);
+      transition: all 0.25s ease;
       text-decoration: none;
       color: inherit;
+      box-shadow: var(--shadow-sm);
       overflow: hidden;
     }
 
@@ -241,59 +360,51 @@
       left: 0;
       right: 0;
       height: 3px;
-      background: linear-gradient(90deg, transparent, transparent);
-      transition: all 0.3s ease;
+      background: transparent;
+      transition: all 0.25s ease;
     }
 
     .action-card:hover {
       transform: translateY(-4px);
       border-color: var(--card-hover-border);
-      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5), 0 0 25px rgba(99, 102, 241, 0.15);
+      box-shadow: var(--shadow-lg);
     }
 
-    .card-slides:hover::before { background: linear-gradient(90deg, #6366f1, #a855f7); }
-    .card-mcq:hover::before { background: linear-gradient(90deg, #10b981, #06b6d4); }
-    .card-colab:hover::before { background: linear-gradient(90deg, #f59e0b, #ef4444); }
-    .card-curriculum:hover::before { background: linear-gradient(90deg, #38bdf8, #6366f1); }
-    .card-pptx:hover::before { background: linear-gradient(90deg, #2563eb, #38bdf8); }
+    .card-labs:hover::before { background: linear-gradient(90deg, #2563eb, #0284c7); }
+    .card-mcq:hover::before { background: linear-gradient(90deg, #059669, #10b981); }
+    .card-colab:hover::before { background: linear-gradient(90deg, #d97706, #f59e0b); }
+    .card-pptx:hover::before { background: linear-gradient(90deg, #dc2626, #f43f5e); }
+    .card-notes:hover::before { background: linear-gradient(90deg, #7c3aed, #a855f7); }
 
     .card-header-icon {
-      width: 52px;
-      height: 52px;
+      width: 48px;
+      height: 48px;
       border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       margin-bottom: 1.25rem;
-      transition: transform 0.3s ease;
+      background: rgba(37, 99, 235, 0.08);
+      border: 1px solid rgba(37, 99, 235, 0.15);
+      color: var(--accent);
     }
-
-    .action-card:hover .card-header-icon {
-      transform: scale(1.1);
-    }
-
-    .icon-slides { background: rgba(99, 102, 241, 0.15); color: #818cf8; border: 1px solid rgba(99, 102, 241, 0.3); }
-    .icon-mcq { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
-    .icon-colab { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
-    .icon-curriculum { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
-    .icon-pptx { background: rgba(37, 99, 235, 0.15); color: #60a5fa; border: 1px solid rgba(37, 99, 235, 0.3); }
 
     .card-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 0.6rem;
-      color: #0f172a;
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      color: var(--text);
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
     .card-desc {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: var(--text-muted);
       line-height: 1.55;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
       flex: 1;
     }
 
@@ -301,106 +412,110 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.4rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
     }
 
     .feature-tag {
       font-size: 0.72rem;
       font-family: 'Fira Code', monospace;
-      padding: 0.25rem 0.55rem;
+      padding: 0.25rem 0.5rem;
       border-radius: 6px;
-      background: #f1f5f9;
+      background: var(--bg);
       border: 1px solid var(--card-border);
-      color: #334155;
+      color: var(--text);
+      font-weight: 500;
     }
 
     .card-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
+      gap: 0.45rem;
       width: 100%;
-      padding: 0.8rem 1rem;
-      border-radius: 10px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-
-    .btn-slides { background: #6366f1; color: #ffffff; }
-    .btn-slides:hover { background: #4f46e5; box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4); }
-
-    .btn-mcq { background: #10b981; color: #ffffff; }
-    .btn-mcq:hover { background: #059669; box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4); }
-
-    .btn-colab { background: #f59e0b; color: #000000; font-weight: 700; }
-    .btn-colab:hover { background: #d97706; box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4); }
-
-    .btn-curriculum { background: rgba(255, 255, 255, 0.08); color: #ffffff; border: 1px solid var(--card-border); }
-    .btn-curriculum:hover { background: rgba(255, 255, 255, 0.15); }
-    .btn-pptx { background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #ffffff; font-weight: 700; }
-    .btn-pptx:hover { background: linear-gradient(135deg, #1d4ed8, #1e40af); box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4); }
-
-    /* Topic Syllabus Highlights Table */
-    .curriculum-preview {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 16px;
-      padding: 2.25rem;
-      backdrop-filter: blur(12px);
-      margin-bottom: 3.5rem;
-    }
-
-    .section-heading {
-      font-size: 1.5rem;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      font-size: 0.88rem;
       font-weight: 700;
-      margin-bottom: 0.75rem;
-      color: #0f172a;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
+      text-decoration: none;
+      transition: all 0.15s ease;
     }
 
-    .section-sub {
-      color: var(--text-muted);
-      font-size: 0.92rem;
-      margin-bottom: 1.75rem;
-    }
+    .btn-blue { background: var(--accent); color: #ffffff; }
+    .btn-blue:hover { background: #1d4ed8; }
 
-    .timeline-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.25rem;
-    }
+    .btn-green { background: var(--emerald); color: #ffffff; }
+    .btn-green:hover { background: #047857; }
 
-    .timeline-item {
+    .btn-amber { background: var(--amber); color: #ffffff; }
+    .btn-amber:hover { background: #b45309; }
+
+    .btn-slate { background: var(--bg); color: var(--text); border: 1px solid var(--card-border); }
+    .btn-slate:hover { background: #e2e8f0; }
+
+    /* SYLLABUS OVERVIEW TABLE */
+    .curriculum-card {
       background: #ffffff;
       border: 1px solid var(--card-border);
-      border-radius: 12px;
-      padding: 1.25rem;
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 3rem;
     }
 
-    .timeline-time {
-      font-family: 'Fira Code', monospace;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--amber);
+    .curriculum-card h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
       margin-bottom: 0.4rem;
+      color: var(--text);
     }
 
-    .timeline-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #0f172a;
-      margin-bottom: 0.5rem;
-    }
-
-    .timeline-desc {
-      font-size: 0.82rem;
+    .curriculum-card p {
       color: var(--text-muted);
-      line-height: 1.5;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
     }
+
+    .table-responsive {
+      overflow-x: auto;
+    }
+
+    table.syllabus-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+
+    table.syllabus-table th, table.syllabus-table td {
+      padding: 0.85rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    table.syllabus-table th {
+      background: var(--bg);
+      color: var(--text);
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    table.syllabus-table tr:hover td {
+      background: rgba(37, 99, 235, 0.02);
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    .status-active { background: rgba(5, 150, 105, 0.12); color: var(--emerald); }
+    .status-ready { background: rgba(37, 99, 235, 0.12); color: var(--accent); }
 
     footer {
       border-top: 1px solid var(--card-border);
@@ -413,220 +528,569 @@
     }
 
     footer a {
-      color: #a5b4fc;
+      color: var(--accent);
       text-decoration: none;
+      font-weight: 600;
     }
 
     footer a:hover {
       text-decoration: underline;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
       .hero-title { font-size: 2.1rem; }
       header { flex-direction: column; gap: 1rem; text-align: center; }
       .brand-group { flex-direction: column; }
       .brand-divider { display: none; }
+      .day-nav-wrapper { flex-wrap: nowrap; }
     }
   </style>
 </head>
 <body>
   <div class="ambient-glow"></div>
 
+  <!-- HEADER -->
   <header>
     <div class="brand-group">
       <img src="assets/edulateral_logo.jpg" alt="Edulateral Foundation" class="brand-logo" onerror="this.style.display='none'">
       <div class="brand-divider"></div>
       <div class="institution-tag">
         <span class="institution-name">GLA UNIVERSITY, MATHURA</span>
-        <span class="institution-sub">Department of Computer Science &bull; Placement Training</span>
+        <span class="institution-sub">Department of Computer Science &bull; 5-Day Python Masterclass</span>
       </div>
     </div>
     <div class="header-links">
+      <a href="Python.pdf" target="_blank" class="header-btn">
+        📄 Official Syllabus PDF
+      </a>
       <a href="https://github.com/Shivam990q/Python-Programming-Training" target="_blank" class="header-btn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-        GitHub Repository
+        🐙 GitHub Repository
       </a>
-      <a href="Python_Day1_Afternoon_Training.pptx" download="Python_Day1_Afternoon_Training.pptx" class="header-btn" style="background: rgba(37, 99, 235, 0.15); border-color: rgba(37, 99, 235, 0.3); color: #60a5fa;" title="Download Native Microsoft PowerPoint Deck (.pptx)">
-        📊 Download PPTX
-      </a>
-      <a href="https://colab.research.google.com/github/Shivam990q/Python-Programming-Training/blob/main/Day1_Afternoon_List_Comprehensions_and_Strings.ipynb" target="_blank" class="header-btn" style="background: rgba(245, 158, 11, 0.15); border-color: rgba(245, 158, 11, 0.3); color: #fbbf24;">
-        ⚡ Open in Colab
+      <a href="https://colab.research.google.com/github/Shivam990q/Python-Programming-Training/blob/main/Day1_Afternoon_List_Comprehensions_and_Strings.ipynb" target="_blank" class="header-btn" style="color: var(--amber); border-color: rgba(217, 119, 6, 0.3); background: rgba(217, 119, 6, 0.08);">
+        ⚡ Launch Colab
       </a>
     </div>
   </header>
 
+  <!-- MAIN CONTAINER -->
   <main>
     <div class="hero-section">
       <div class="badge-bar">
-        <span>🚀 DAY 1 AFTERNOON INTENSIVE</span>
+        <span>🎓 5-DAY BLOCK TEACHING CURRICULUM</span>
         <span>•</span>
-        <span>3-HOUR PLACEMENT FAST-TRACK</span>
+        <span>CAMPUS PLACEMENT FAST-TRACK</span>
       </div>
-      <h1 class="hero-title">Python Basics, Lists and Strings</h1>
+      <h1 class="hero-title">Python Programming Masterclass</h1>
       <p class="hero-sub">
-        Master list comprehensions, 2D matrix flattening, companion iterators, boundary-safe string slicing, memory immutability, and all 23 placement-critical string methods through interactive visuals and live coding.
+        Comprehensive 5-day placement training program engineered for GLA University & Edulateral Foundation. Master data structures, functional pipelines, recursion, file systems, regex, and capstone software projects.
       </p>
 
       <div class="stats-pills">
-        <div class="stat-pill">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          3 Hours Direct Training
+        <div class="stat-pill">📅 5 Days Block Teaching</div>
+        <div class="stat-pill">⏱️ 30 Direct Training Hours</div>
+        <div class="stat-pill">🧪 7 Interactive Visual Labs</div>
+        <div class="stat-pill">📝 40 Placement MCQs</div>
+        <div class="stat-pill">🚀 6 Capstone Projects</div>
+      </div>
+    </div>
+
+    <!-- 5-DAY NAVIGATION SWITCHER -->
+    <div class="day-nav-wrapper">
+      <button class="day-tab active" onclick="switchDayTab(1)">
+        <span class="day-num">Day 1</span>
+        <span class="day-title">Basics, Lists & Strings</span>
+        <span class="day-status ready">● Live Ready</span>
+      </button>
+
+      <button class="day-tab" onclick="switchDayTab(2)">
+        <span class="day-num">Day 2</span>
+        <span class="day-title">Tuples, Sets, Dicts & Funcs</span>
+        <span class="day-status upcoming">Curriculum Ready</span>
+      </button>
+
+      <button class="day-tab" onclick="switchDayTab(3)">
+        <span class="day-num">Day 3</span>
+        <span class="day-title">Recursion & Modules</span>
+        <span class="day-status upcoming">Curriculum Ready</span>
+      </button>
+
+      <button class="day-tab" onclick="switchDayTab(4)">
+        <span class="day-num">Day 4</span>
+        <span class="day-title">Exceptions & Files</span>
+        <span class="day-status upcoming">Curriculum Ready</span>
+      </button>
+
+      <button class="day-tab" onclick="switchDayTab(5)">
+        <span class="day-num">Day 5</span>
+        <span class="day-title">Regex & Capstone Projects</span>
+        <span class="day-status upcoming">Curriculum Ready</span>
+      </button>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- DAY 1 PANEL (FULLY ACTIVE & DELIVERED)                   -->
+    <!-- ========================================================= -->
+    <div id="day-panel-1" class="day-panel active">
+      <div class="panel-header-banner">
+        <div>
+          <h2>🚀 Day 1: Python Basics, Lists & Strings</h2>
+          <p>Forenoon: Conditions, Loops & Lists (15 Methods) &bull; Afternoon: List Comprehensions, Companions & Strings (23 Methods)</p>
         </div>
-        <div class="stat-pill">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          5 Interactive Visual Labs
+        <div>
+          <span class="status-badge status-active">● 100% Complete & Verified</span>
         </div>
-        <div class="stat-pill">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-          5 Live Interactive Labs
+      </div>
+
+      <!-- Action Cards for Day 1 -->
+      <div class="action-grid">
+        <!-- Card 1: 7-Lab Visual Suite -->
+        <a href="presentation_visuals.html" class="action-card card-labs">
+          <div class="card-header-icon">🧪</div>
+          <h3 class="card-title">7-Lab Visual Suite <span>&rarr;</span></h3>
+          <p class="card-desc">
+            Interactive simulation playgrounds: Slicing Ruler, List Comp Stream Pipeline, CPython Memory Visualizer, 23 String Methods, F-Strings, Zipper/Enumerate, and Escape Sequences Terminal.
+          </p>
+          <div class="feature-tags">
+            <span class="feature-tag">Slicing Ruler</span>
+            <span class="feature-tag">Comp Pipeline</span>
+            <span class="feature-tag">Memory Heap</span>
+            <span class="feature-tag">23 Methods</span>
+            <span class="feature-tag">Zipper & Gears</span>
+          </div>
+          <div class="card-btn btn-blue">Launch 7 Visual Labs &bull; Light Mode</div>
+        </a>
+
+        <!-- Card 2: 40-MCQ Exam Engine -->
+        <a href="interactive_mcq_quiz.html" class="action-card card-mcq">
+          <div class="card-header-icon" style="background: rgba(5, 150, 105, 0.08); border-color: rgba(5, 150, 105, 0.2); color: var(--emerald);">📝</div>
+          <h3 class="card-title">40 Placement MCQs <span>&rarr;</span></h3>
+          <p class="card-desc">
+            40 rigorous placement questions mapped across all Day 1 topics. Includes Practice Mode, Timed 40-Min Exam, instant feedback, and weak-area performance scorecards.
+          </p>
+          <div class="feature-tags">
+            <span class="feature-tag">40 Questions</span>
+            <span class="feature-tag">8x5 Palette</span>
+            <span class="feature-tag">Timed Exam</span>
+            <span class="feature-tag">Full Solutions</span>
+          </div>
+          <div class="card-btn btn-green">Start 40-Question Exam</div>
+        </a>
+
+        <!-- Card 3: Google Colab Notebook -->
+        <a href="https://colab.research.google.com/github/Shivam990q/Python-Programming-Training/blob/main/Day1_Afternoon_List_Comprehensions_and_Strings.ipynb" target="_blank" class="action-card card-colab">
+          <div class="card-header-icon" style="background: rgba(217, 119, 6, 0.08); border-color: rgba(217, 119, 6, 0.2); color: var(--amber);">⚡</div>
+          <h3 class="card-title">Google Colab Notebook <span>&rarr;</span></h3>
+          <p class="card-desc">
+            Zero-installation cloud notebook: 43 structured cells, 20 runnable concept walkthroughs, and 10 coding challenges with auto-assert test verification.
+          </p>
+          <div class="feature-tags">
+            <span class="feature-tag">20 Code Walkthroughs</span>
+            <span class="feature-tag">10 Challenges</span>
+            <span class="feature-tag">Auto-Assert Tests</span>
+          </div>
+          <div class="card-btn btn-amber">Open in Google Colab</div>
+        </a>
+
+        <!-- Card 4: PowerPoint Presentation -->
+        <a href="Python_Day1_Afternoon_Training.pptx" download class="action-card card-pptx">
+          <div class="card-header-icon" style="background: rgba(220, 38, 38, 0.08); border-color: rgba(220, 38, 38, 0.2); color: var(--rose);">📊</div>
+          <h3 class="card-title">PowerPoint Deck (.pptx) <span>&rarr;</span></h3>
+          <p class="card-desc">
+            Native Microsoft PowerPoint presentation (16:9 widescreen, 24 slides, Light Theme) formatted for university overhead projectors and offline delivery.
+          </p>
+          <div class="feature-tags">
+            <span class="feature-tag">16:9 Widescreen</span>
+            <span class="feature-tag">24 Slides</span>
+            <span class="feature-tag">Offline Ready</span>
+          </div>
+          <div class="card-btn btn-slate">Download Presentation (.pptx)</div>
+        </a>
+
+        <!-- Card 5: Trainer Guide & Notes -->
+        <a href="README.md" class="action-card card-notes">
+          <div class="card-header-icon" style="background: rgba(124, 58, 237, 0.08); border-color: rgba(124, 58, 237, 0.2); color: var(--accent-purple);">📖</div>
+          <h3 class="card-title">Trainer Playbook <span>&rarr;</span></h3>
+          <p class="card-desc">
+            Minute-by-minute session timeline (0&ndash;180 min), pedagogical demonstration scripts, syllabus checklist, and Top 10 Placement Traps cheat sheet.
+          </p>
+          <div class="feature-tags">
+            <span class="feature-tag">0-180 Min Timeline</span>
+            <span class="feature-tag">10 Placement Traps</span>
+            <span class="feature-tag">Lecture Scripts</span>
+          </div>
+          <div class="card-btn btn-slate">View Trainer Guide</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- DAY 2 PANEL                                               -->
+    <!-- ========================================================= -->
+    <div id="day-panel-2" class="day-panel">
+      <div class="panel-header-banner">
+        <div>
+          <h2>📦 Day 2: Tuples, Sets, Dictionaries & Functions</h2>
+          <p>Forenoon: Collections Deep Dive (42 Methods) &bull; Afternoon: Functions, Scope & Functional Pipelines</p>
         </div>
-        <div class="stat-pill">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-          40 Placement MCQs
+        <div>
+          <span class="status-badge status-ready">Curriculum Ready &bull; Day 2 Folder</span>
         </div>
-        <div class="stat-pill">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-          10 Colab Coding Challenges
-        </div>
-        <div class="stat-pill">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          PowerPoint Deck (.pptx)
+      </div>
+
+      <div class="curriculum-card">
+        <h3>📋 Day 2 Detailed Syllabus Breakdown</h3>
+        <p>Master immutable tuples, unique sets, hash maps, parameter passing, and functional data transformations.</p>
+
+        <div class="table-responsive">
+          <table class="syllabus-table">
+            <thead>
+              <tr>
+                <th>Session</th>
+                <th>Core Modules</th>
+                <th>Methods & Built-ins Covered</th>
+                <th>Placement Traps & Key Takeaways</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Forenoon (3 Hours)</strong><br>Tuples, Sets & Dicts</td>
+                <td>
+                  • Tuples: packing, unpacking, immutability<br>
+                  • Sets: hashing, Venn mathematical operations<br>
+                  • Dictionaries: key-value mapping, dict comprehensions, sorting by key/value
+                </td>
+                <td>
+                  • <strong>Tuple (12)</strong>: count, index, min, max, sum, sorted, any, all, enumerate, reversed<br>
+                  • <strong>Set (15)</strong>: add, update, remove, discard, union, intersection, difference, issubset<br>
+                  • <strong>Dict (15)</strong>: get, keys, values, items, update, pop, popitem, setdefault, fromkeys
+                </td>
+                <td>
+                  • <code>remove()</code> raises KeyError on missing element vs <code>discard()</code> safe deletion.<br>
+                  • Dictionary mutation while iterating raises <code>RuntimeError</code>.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Afternoon (3 Hours)</strong><br>Functions & Functional</td>
+                <td>
+                  • Functions: definition, return, docstrings<br>
+                  • Arguments: positional, keyword, default, <code>*args</code>, <code>**kwargs</code><br>
+                  • Scope: Local, Global, Nonlocal, LEGB Rule<br>
+                  • Functional: <code>lambda</code>, <code>map()</code>, <code>filter()</code>, <code>reduce()</code>
+                </td>
+                <td>
+                  • Higher-order functions: <code>map(fn, iter)</code>, <code>filter(fn, iter)</code><br>
+                  • <code>functools.reduce(fn, iter)</code> for accumulation<br>
+                  • Chaining pipelines: <code>reduce(add, map(sq, filter(ev, nums)))</code>
+                </td>
+                <td>
+                  • <strong>Mutable Default Argument Trap</strong>: <code>def append_to(x, arr=[])</code> shares state!<br>
+                  • Modifying outer variables without <code>nonlocal</code> raises <code>UnboundLocalError</code>.
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
 
-    <!-- Action Cards Grid -->
-    <div class="action-grid">
-      <!-- Card 1: 5 Interactive Visual Simulation Labs -->
-      <a href="presentation_visuals.html" class="action-card card-slides">
-        <div class="card-header-icon icon-slides">🧪</div>
-        <h2 class="card-title">Interactive Visual Labs <span>&rarr;</span></h2>
-        <p class="card-desc">
-          5 live simulation playgrounds: Slicing Ruler coordinate visualizer, List Comp pipeline execution stream, CPython memory immutability, 23 string methods tester, and F-string studio.
-        </p>
-        <div class="feature-tags">
-          <span class="feature-tag">Slicing Ruler Lab</span>
-          <span class="feature-tag">List Comp Pipeline</span>
-          <span class="feature-tag">Memory Immutability</span>
-          <span class="feature-tag">23 Methods Studio</span>
-          <span class="feature-tag">F-String Formatter</span>
+    <!-- ========================================================= -->
+    <!-- DAY 3 PANEL                                               -->
+    <!-- ========================================================= -->
+    <div id="day-panel-3" class="day-panel">
+      <div class="panel-header-banner">
+        <div>
+          <h2>🔁 Day 3: Recursion, Modules & Packages</h2>
+          <p>Forenoon: Recursive Problem Solving & Call-Stack &bull; Afternoon: Standard Libraries, Custom Modules & NumPy</p>
         </div>
-        <div class="card-btn btn-slides">Launch 5 Visual Labs &bull; Light Mode</div>
-      </a>
+        <div>
+          <span class="status-badge status-ready">Curriculum Ready &bull; Day 3 Folder</span>
+        </div>
+      </div>
 
-      <!-- Card 2: Interactive MCQ Quiz -->
-      <a href="interactive_mcq_quiz.html" class="action-card card-mcq">
-        <div class="card-header-icon icon-mcq">📝</div>
-        <h2 class="card-title">Placement MCQ Engine <span>&rarr;</span></h2>
-        <p class="card-desc">
-          40 rigorous technical questions categorized across all syllabus dimensions with Practice Mode, Timed Exam Mode, instant explanations, and performance scorecards.
-        </p>
-        <div class="feature-tags">
-          <span class="feature-tag">40 Questions</span>
-          <span class="feature-tag">Timed 45-Min Exam</span>
-          <span class="feature-tag">Instant Feedback</span>
-          <span class="feature-tag">Weak-Area Analytics</span>
-        </div>
-        <div class="card-btn btn-mcq">Start MCQ Assessment</div>
-      </a>
+      <div class="curriculum-card">
+        <h3>📋 Day 3 Detailed Syllabus Breakdown</h3>
+        <p>Deconstruct the call-stack, master divide-and-conquer algorithms, and utilize Python's batteries-included ecosystem.</p>
 
-      <!-- Card 3: Google Colab Notebook -->
-      <a href="https://colab.research.google.com/github/Shivam990q/Python-Programming-Training/blob/main/Day1_Afternoon_List_Comprehensions_and_Strings.ipynb" target="_blank" class="action-card card-colab">
-        <div class="card-header-icon icon-colab">⚡</div>
-        <h2 class="card-title">Google Colab Notebook <span>&rarr;</span></h2>
-        <p class="card-desc">
-          Zero-installation cloud coding notebook. 43 structured cells, 20 executable concept blocks, and 10 progressive coding challenges with test assert verifications.
-        </p>
-        <div class="feature-tags">
-          <span class="feature-tag">Cloud Ready</span>
-          <span class="feature-tag">20 Code Walkthroughs</span>
-          <span class="feature-tag">10 Coding Tasks</span>
-          <span class="feature-tag">Auto-Assert Tests</span>
+        <div class="table-responsive">
+          <table class="syllabus-table">
+            <thead>
+              <tr>
+                <th>Session</th>
+                <th>Core Modules</th>
+                <th>Methods & Built-ins Covered</th>
+                <th>Placement Traps & Key Takeaways</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Forenoon (3 Hours)</strong><br>Recursion Mastery</td>
+                <td>
+                  • Base case vs recursive case architecture<br>
+                  • Call-stack mechanics & RecursionLimit<br>
+                  • Classic: Factorial, Fibonacci, GCD, Binary Search, Tower of Hanoi<br>
+                  • Memoization: custom dict cache & <code>lru_cache</code>
+                </td>
+                <td>
+                  • <code>sys.getrecursionlimit()</code> & <code>sys.setrecursionlimit()</code><br>
+                  • <code>functools.lru_cache(maxsize=None)</code><br>
+                  • Recursive traversal of nested lists and strings
+                </td>
+                <td>
+                  • <strong>StackOverflow</strong>: Missing base case exhausts CPython call stack (default 1000 frames).<br>
+                  • Overlapping subproblems in naive Fibonacci cause $O(2^n)$ exponential blowup.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Afternoon (3 Hours)</strong><br>Modules & Libraries</td>
+                <td>
+                  • Custom modules, import styles, <code>__name__ == '__main__'</code><br>
+                  • Package structure with <code>__init__.py</code><br>
+                  • Standard modules: <code>math</code>, <code>time</code>, <code>os</code>, <code>random</code>, <code>datetime</code><br>
+                  • Scientific computing introduction: <code>numpy</code> arrays
+                </td>
+                <td>
+                  • <strong>math (12)</strong>: sqrt, pow, ceil, floor, factorial, gcd, fabs, log, pi, e<br>
+                  • <strong>time (8)</strong>: perf_counter, sleep, strftime<br>
+                  • <strong>os (12)</strong>: getcwd, listdir, mkdir, path.join, path.exists<br>
+                  • <strong>random</strong>: randint, choice, shuffle, sample
+                </td>
+                <td>
+                  • Circular imports between two modules crash on initial execution.<br>
+                  • <code>random.choice()</code> on empty sequence raises <code>IndexError</code>.
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div class="card-btn btn-colab">Open in Google Colab</div>
-      </a>
-
-      <!-- Card 4: Trainer Guide & Curriculum -->
-      <a href="README.md" class="action-card card-curriculum">
-        <div class="card-header-icon icon-curriculum">📖</div>
-        <h2 class="card-title">Trainer Guide & Notes <span>&rarr;</span></h2>
-        <p class="card-desc">
-          Minute-by-minute session playbook (0 to 180 min), learning outcomes, pedagogical demonstration scripts, and Top 10 Placement Traps cheat sheet.
-        </p>
-        <div class="feature-tags">
-          <span class="feature-tag">Lesson Plan</span>
-          <span class="feature-tag">Time Matrix</span>
-          <span class="feature-tag">10 Traps Sheet</span>
-          <span class="feature-tag">Reference Notes</span>
-        </div>
-        <div class="card-btn btn-curriculum">View Trainer Guide</div>
-      </a>
-
-      <!-- Card 5: PowerPoint Slide Deck (.pptx) -->
-      <a href="Python_Day1_Afternoon_Training.pptx" download="Python_Day1_Afternoon_Training.pptx" class="action-card card-pptx">
-        <div class="card-header-icon icon-pptx">📊</div>
-        <h2 class="card-title">PowerPoint Master Deck <span>&darr;</span></h2>
-        <p class="card-desc">
-          Official 16:9 widescreen Microsoft PowerPoint (.pptx) deck for university classroom projection, faculty lectures, and offline study. Includes complete afternoon syllabus across 24 slides.
-        </p>
-        <div class="feature-tags">
-          <span class="feature-tag">16:9 Widescreen</span>
-          <span class="feature-tag">24 Slides</span>
-          <span class="feature-tag">Projector Light Theme</span>
-          <span class="feature-tag">Native .PPTX File</span>
-        </div>
-        <div class="card-btn btn-pptx">Download PowerPoint (.pptx)</div>
-      </a>
+      </div>
     </div>
 
-    <!-- Syllabus Matrix Overview -->
-    <div class="curriculum-preview">
-      <h3 class="section-heading">⏱️ Afternoon 3-Hour Master Timeline</h3>
-      <p class="section-sub">Carefully timed breakdown designed to maximize student engagement, concept retention, and coding speed.</p>
+    <!-- ========================================================= -->
+    <!-- DAY 4 PANEL                                               -->
+    <!-- ========================================================= -->
+    <div id="day-panel-4" class="day-panel">
+      <div class="panel-header-banner">
+        <div>
+          <h2>🛡️ Day 4: Exceptions & File Handling</h2>
+          <p>Forenoon: Defensive Error Handling & Custom Exceptions &bull; Afternoon: Persistent File I/O & Streams</p>
+        </div>
+        <div>
+          <span class="status-badge status-ready">Curriculum Ready &bull; Day 4 Folder</span>
+        </div>
+      </div>
 
-      <div class="timeline-grid">
-        <div class="timeline-item">
-          <div class="timeline-time">00 &ndash; 35 MIN</div>
-          <div class="timeline-title">List Comprehensions</div>
-          <p class="timeline-desc">Syntax anatomy `[expr for x in it if cond]`. CPython bytecode vs loops. Filtering vs ternary value substitution.</p>
+      <div class="curriculum-card">
+        <h3>📋 Day 4 Detailed Syllabus Breakdown</h3>
+        <p>Build enterprise-grade resilient Python applications that handle real-world exceptions and persistent disk storage.</p>
+
+        <div class="table-responsive">
+          <table class="syllabus-table">
+            <thead>
+              <tr>
+                <th>Session</th>
+                <th>Core Modules</th>
+                <th>Methods & Built-ins Covered</th>
+                <th>Placement Traps & Key Takeaways</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Forenoon (3 Hours)</strong><br>Exception Handling</td>
+                <td>
+                  • Errors vs Exceptions hierarchy<br>
+                  • <code>try-except-else-finally</code> complete flow<br>
+                  • Catching multiple exceptions & exception chaining<br>
+                  • <code>raise</code>, <code>assert</code>, and Custom Exception classes
+                </td>
+                <td>
+                  • Built-ins: <code>ZeroDivisionError</code>, <code>ValueError</code>, <code>TypeError</code>, <code>IndexError</code>, <code>KeyError</code>, <code>FileNotFoundError</code><br>
+                  • Subclassing <code>Exception</code> for user-defined errors
+                </td>
+                <td>
+                  • <strong>Bare <code>except:</code> trap</strong>: Silently catches <code>KeyboardInterrupt</code> and <code>SystemExit</code>!<br>
+                  • <code>finally</code> block executes even if an unhandled exception or <code>return</code> occurs.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Afternoon (3 Hours)</strong><br>File Handling</td>
+                <td>
+                  • <code>open()</code> function and file modes: <code>r</code>, <code>w</code>, <code>a</code>, <code>r+</code>, <code>rb</code>, <code>wb</code><br>
+                  • Context managers: <code>with open(...) as f:</code><br>
+                  • Reading and writing text, binary, and CSV data<br>
+                  • File stream pointer manipulation
+                </td>
+                <td>
+                  • <strong>File Methods (10)</strong>: read, readline, readlines, write, writelines, seek, tell, flush, close, truncate<br>
+                  • <code>seek(offset, whence)</code> with <code>tell()</code>
+                </td>
+                <td>
+                  • Opening in <code>w</code> mode immediately truncates the file to 0 bytes before writing!<br>
+                  • Forgetting to close files causes resource leaks and uncommitted write buffers.
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-time">35 &ndash; 60 MIN</div>
-          <div class="timeline-title">Nested & Built-ins</div>
-          <p class="timeline-desc">2D matrix flattening, matrix transposition. Companion built-ins: `sorted(key=)`, `enumerate(start=1)`, `zip(*matrix)` unzip.</p>
+      </div>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- DAY 5 PANEL                                               -->
+    <!-- ========================================================= -->
+    <div id="day-panel-5" class="day-panel">
+      <div class="panel-header-banner">
+        <div>
+          <h2>💻 Day 5: Regular Expressions & Capstone Projects</h2>
+          <p>Forenoon: Pattern Matching & DB Connectivity &bull; Afternoon: 6 End-to-End Hands-on Placement Projects</p>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-time">60 &ndash; 70 MIN</div>
-          <div class="timeline-title">Interactive Visual Labs</div>
-          <p class="timeline-desc">Interactive pipeline simulation: step-by-step stream filtering and accumulator visualization in the browser.</p>
+        <div>
+          <span class="status-badge status-ready">Curriculum Ready &bull; Day 5 Folder</span>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-time">70 &ndash; 90 MIN</div>
-          <div class="timeline-title">Strings & Memory Model</div>
-          <p class="timeline-desc">Literals, raw strings `r"..."`, escape sequences (`\n`, `\t`, `\r`, `\b`). CPython immutability & pointer reassignment.</p>
+      </div>
+
+      <div class="curriculum-card">
+        <h3>📋 Day 5 Detailed Syllabus Breakdown</h3>
+        <p>Synthesize everything learned across all 5 days into production-grade, resume-worthy capstone software projects.</p>
+
+        <div class="table-responsive">
+          <table class="syllabus-table">
+            <thead>
+              <tr>
+                <th>Session</th>
+                <th>Core Modules</th>
+                <th>Methods & Built-ins Covered</th>
+                <th>Placement Traps & Key Takeaways</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Forenoon (3 Hours)</strong><br>Regex & Database</td>
+                <td>
+                  • <code>re</code> module, raw strings, metacharacters (<code>. ^ $ * + ? [] {} | \</code>)<br>
+                  • Character classes (<code>\d</code>, <code>\w</code>, <code>\s</code>) & quantifiers<br>
+                  • Match objects, capturing groups, and <code>re.compile()</code><br>
+                  • Database Connectivity Overview (SQLite / DB-API)
+                </td>
+                <td>
+                  • <strong>re functions</strong>: match, search, findall, finditer, split, sub<br>
+                  • <code>re.search()</code> vs <code>re.match()</code> (anchored to string start)<br>
+                  • SQLite3: <code>connect()</code>, <code>cursor()</code>, <code>execute()</code>, <code>commit()</code>
+                </td>
+                <td>
+                  • <code>re.match()</code> only checks the start of the string, while <code>re.search()</code> scans anywhere.<br>
+                  • Greedy vs Non-greedy matching with <code>?</code> (e.g. <code>.*</code> vs <code>.*?</code>).
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Afternoon (3 Hours)</strong><br>6 Capstone Projects</td>
+                <td>
+                  1. <strong>Contact Book</strong>: CRUD operations with file persistence.<br>
+                  2. <strong>Student Grade Analyzer</strong>: Lists & dicts with lambda, map, filter, reduce.<br>
+                  3. <strong>Interactive Quiz Game</strong>: Randomized questions, score history file.<br>
+                  4. <strong>Multi-Category Expense Tracker</strong>: Category totals, CSV export.<br>
+                  5. <strong>Email & Phone Log Validator</strong>: Regex-powered log cleaning.<br>
+                  6. <strong>ATM & Banking Simulation</strong>: Custom exceptions and account management.
+                </td>
+                <td>
+                  • End-to-end integration of collections, functions, files, exceptions, and regex.<br>
+                  • Code structuring following PEP 8 best practices.<br>
+                  • Test suite creation with assertions.
+                </td>
+                <td>
+                  • Industry standards: Writing clean docstrings, typed hints, and defensive input validation for technical placement interviews.
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-time">90 &ndash; 115 MIN</div>
-          <div class="timeline-title">Indexing & Slicing</div>
-          <p class="timeline-desc">Dual-directional indexing (0 to $N-1$ & $-1$ to $-N$). Slicing `s[start:stop:step]`, step reversals, out-of-range bounds safety.</p>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-time">115 &ndash; 155 MIN</div>
-          <div class="timeline-title">23 String Methods & F-Strings</div>
-          <p class="timeline-desc">18 core methods + 5 advanced methods (`center`, `zfill`, `partition`, `isalnum`, `isspace`). F-strings alignment & formatting.</p>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-time">155 &ndash; 180 MIN</div>
-          <div class="timeline-title">Colab & MCQ Assessment</div>
-          <p class="timeline-desc">Hands-on coding challenges in Google Colab followed by 40-question timed placement test in the assessment engine.</p>
-        </div>
+      </div>
+    </div>
+
+    <!-- FULL 5-DAY MASTER CURRICULUM OVERVIEW TABLE -->
+    <div class="curriculum-card">
+      <h3>📅 Complete 5-Day Master Block Teaching Schedule</h3>
+      <p>Official curriculum mapped directly from GLA University syllabus document <code>Python.pdf</code>.</p>
+
+      <div class="table-responsive">
+        <table class="syllabus-table">
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Forenoon Session (3 Hours)</th>
+              <th>Afternoon Session (3 Hours)</th>
+              <th>Status</th>
+              <th>Folder Location</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Day 1</strong></td>
+              <td>Python Basics, Conditions, Iteration & Lists (15 Methods)</td>
+              <td>List Comprehensions, Companions & Strings (23 Methods)</td>
+              <td><span class="status-badge status-active">● 100% Ready</span></td>
+              <td><code>Day 01 - Basics, Lists and Strings/</code></td>
+            </tr>
+            <tr>
+              <td><strong>Day 2</strong></td>
+              <td>Tuples, Sets & Dictionaries (42 Methods Total)</td>
+              <td>Functions, Scope, Closures & Functional Programming</td>
+              <td><span class="status-badge status-ready">Curriculum Ready</span></td>
+              <td><code>Day 02 - Tuples, Sets, Dictionaries and Functions/</code></td>
+            </tr>
+            <tr>
+              <td><strong>Day 3</strong></td>
+              <td>Recursion, Call Stack & Memoization</td>
+              <td>Built-in Functions, Modules, OS, Time & NumPy</td>
+              <td><span class="status-badge status-ready">Curriculum Ready</span></td>
+              <td><code>Day 03 - Recursion, Modules and Packages/</code></td>
+            </tr>
+            <tr>
+              <td><strong>Day 4</strong></td>
+              <td>Exception Handling & Custom Exceptions</td>
+              <td>File I/O, Modes, Context Managers (10 Methods)</td>
+              <td><span class="status-badge status-ready">Curriculum Ready</span></td>
+              <td><code>Day 04 - Exceptions and File Handling/</code></td>
+            </tr>
+            <tr>
+              <td><strong>Day 5</strong></td>
+              <td>Regular Expressions (re module) & DB Overview</td>
+              <td>6 Capstone Placement Projects Implementation</td>
+              <td><span class="status-badge status-ready">Curriculum Ready</span></td>
+              <td><code>Day 05 - Regex and Projects/</code></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </main>
 
+  <!-- FOOTER -->
   <footer>
-    <p>GLA University Python Programming Training &bull; Powered by <strong>Edulateral Foundation</strong></p>
-    <p style="margin-top: 0.5rem; font-size: 0.78rem;">Designed & Automated for Placement Excellence &bull; <a href="https://github.com/Shivam990q/Python-Programming-Training" target="_blank">GitHub Repository</a> &bull; <a href="https://colab.research.google.com/github/Shivam990q/Python-Programming-Training/blob/main/Day1_Afternoon_List_Comprehensions_and_Strings.ipynb" target="_blank">Google Colab</a></p>
+    <p>GLA University Python Programming Masterclass &bull; Powered by <strong>Edulateral Foundation</strong></p>
+    <p style="margin-top: 0.5rem; font-size: 0.78rem;">
+      <a href="Day 01 - Basics, Lists and Strings/presentation_visuals.html">Day 1 Visual Labs</a> &bull; 
+      <a href="Day 01 - Basics, Lists and Strings/interactive_mcq_quiz.html">Placement MCQs</a> &bull; 
+      <a href="https://colab.research.google.com/github/Shivam990q/Python-Programming-Training/blob/main/Day1_Afternoon_List_Comprehensions_and_Strings.ipynb" target="_blank">Google Colab</a> &bull; 
+      <a href="Python.pdf" target="_blank">Download Curriculum PDF</a> &bull; 
+      <a href="https://github.com/Shivam990q/Python-Programming-Training" target="_blank">GitHub Repository</a>
+    </p>
   </footer>
+
+  <!-- SCRIPT FOR SWITCHING DAY TABS -->
+  <script>
+    function switchDayTab(dayNum) {
+      document.querySelectorAll('.day-tab').forEach((tab, idx) => {
+        if (idx === dayNum - 1) tab.classList.add('active');
+        else tab.classList.remove('active');
+      });
+
+      document.querySelectorAll('.day-panel').forEach(panel => {
+        panel.classList.remove('active');
+      });
+
+      const activePanel = document.getElementById(`day-panel-${dayNum}`);
+      if (activePanel) activePanel.classList.add('active');
+    }
+  </script>
 </body>
 </html>

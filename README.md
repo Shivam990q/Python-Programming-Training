@@ -10,19 +10,38 @@
 
 ---
 
-## 📂 Package Directory Structure
+## 📂 5-Day Curriculum Directory Structure
 ```text
 Python Programming Training/
 │
-├── index.html                      # Interactive Course Portal & Launchpad (GitHub Pages)
-├── presentation_visuals.html       # Visual Presentation Deck (24 slides) + 5 Interactive Visual Labs
-├── interactive_mcq_quiz.html       # 35 Placement-Grade MCQs with instant feedback & analytics
-├── Day1_Afternoon_List_Comprehensions_and_Strings.ipynb  # Complete Google Colab Jupyter Notebook
-├── assets/
-│   ├── edulateral_logo.jpg         # Official Edulateral Foundation branding asset
-│   └── logo_b64.txt                # High-density Base64 URI for self-contained portability
-├── loop_state.json                 # Ralph loop persistence & verification state
-└── README.md                       # Complete Trainer & Student Guide (this document)
+├── index.html                                        # 5-Day Interactive Master Portal & Launchpad (GitHub Pages)
+├── Python.pdf                                        # Official GLA University 5-Day Curriculum Syllabus Document
+│
+├── Day 01 - Basics, Lists and Strings/               # Day 1: Full Interactive Module (100% Production Ready)
+│   ├── Day1_Afternoon_List_Comprehensions_and_Strings.ipynb # Master Google Colab Notebook (43 cells, 10 challenges)
+│   ├── presentation_visuals.html                     # 7 Interactive Visual Labs (Slicing, Comprehensions, Memory)
+│   ├── interactive_mcq_quiz.html                     # 40 Placement MCQs with instant pedagogical feedback & timer
+│   ├── Python_Day1_Afternoon_Training.pptx           # 24-Slide 16:9 Light-Themed Executive PowerPoint Presentation
+│   ├── assets/                                       # Edulateral Foundation branding logos
+│   └── README.md                                     # Day 1 Trainer & Student Lesson Guide
+│
+├── Day 02 - Tuples, Sets, Dictionaries and Functions/# Day 2: Advanced Data Structures & Functional Programming
+│   └── README.md                                     # Day 2 Syllabus & Traps Guide (Tuples, Sets, Dicts, Map, Filter)
+│
+├── Day 03 - Recursion, Modules and Packages/         # Day 3: Algorithmic Thinking & Scientific Computing
+│   └── README.md                                     # Day 3 Syllabus & Traps Guide (Call Stack, OS, Random, NumPy)
+│
+├── Day 04 - Exceptions and File Handling/            # Day 4: Production Resilience & Persistent I/O
+│   └── README.md                                     # Day 4 Syllabus & Traps Guide (Try-Except, Files, Binary I/O)
+│
+├── Day 05 - Regex and Projects/                      # Day 5: Pattern Matching & 6 Capstone Placement Projects
+│   └── README.md                                     # Day 5 Syllabus & Traps Guide (re Module, 6 Capstone Projects)
+│
+├── [Root Golden Fallbacks for Direct URLs]:
+├── presentation_visuals.html                         # Root fallback for direct links & bookmarks
+├── interactive_mcq_quiz.html                         # Root fallback for direct links & bookmarks
+├── Day1_Afternoon_List_Comprehensions_and_Strings.ipynb # Root fallback for direct Colab launch
+└── Python_Day1_Afternoon_Training.pptx               # Root fallback for direct download
 ```
 
 ---
