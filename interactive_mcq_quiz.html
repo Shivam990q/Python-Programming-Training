@@ -9,15 +9,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* DEFAULT: PROJECTOR-READY LIGHT MODE */
+            /* DEFAULT: PROJECTOR-READY 100% LIGHT THEME */
             --bg-primary: #f8fafc;
             --bg-secondary: #ffffff;
             --bg-card: #ffffff;
             --bg-card-hover: #f1f5f9;
             --border-color: #e2e8f0;
+            --border-color-darker: #cbd5e1;
             --text-main: #0f172a;
             --text-muted: #475569;
             --brand-blue: #2563eb;
+            --brand-blue-hover: #1d4ed8;
             --brand-blue-light: #3b82f6;
             --brand-gold: #d97706;
             --brand-gold-light: #f59e0b;
@@ -28,6 +30,8 @@
             --accent-purple: #7c3aed;
             --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
             --font-mono: 'Fira Code', monospace;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
             --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
             --radius-md: 10px;
             --radius-lg: 16px;
@@ -51,7 +55,6 @@
         /* Header */
         header {
             background: var(--bg-secondary);
-            backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-color);
             padding: 0.75rem 2rem;
             display: flex;
@@ -60,6 +63,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: var(--shadow-sm);
         }
 
         .header-logo-group {
@@ -71,9 +75,10 @@
         .header-logo-img {
             height: 46px;
             border-radius: 6px;
-            background: #fff;
+            background: #ffffff;
             padding: 2px 8px;
             object-fit: contain;
+            border: 1px solid var(--border-color);
         }
 
         .header-title-text h1 {
@@ -83,13 +88,13 @@
         }
 
         .header-title-text h1 span {
-            color: var(--brand-gold-light);
+            color: var(--brand-blue);
         }
 
         .header-title-text p {
             font-size: 0.78rem;
             color: var(--text-muted);
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .exam-status-bar {
@@ -105,7 +110,7 @@
             border-radius: 20px;
             font-family: var(--font-mono);
             font-size: 0.95rem;
-            color: var(--brand-gold-light);
+            color: var(--brand-gold);
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -135,7 +140,8 @@
 
         .mode-btn.active {
             background: var(--brand-blue);
-            color: #fff;
+            color: #ffffff;
+            box-shadow: 0 1px 4px rgba(37, 99, 235, 0.3);
         }
 
         /* Main Container */
@@ -177,15 +183,16 @@
         }
 
         .filter-chip:hover {
-            border-color: var(--brand-blue-light);
-            color: #fff;
+            border-color: var(--brand-blue);
+            color: var(--brand-blue);
+            background: #f1f5f9;
         }
 
         .filter-chip.active {
             background: var(--brand-blue);
-            color: #fff;
-            border-color: var(--brand-blue-light);
-            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
+            color: #ffffff;
+            border-color: var(--brand-blue);
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.35);
         }
 
         /* Question Card */
@@ -215,20 +222,20 @@
         }
 
         .q-num-pill {
-            background: rgba(217, 119, 6, 0.1);
+            background: rgba(217, 119, 6, 0.12);
             color: var(--brand-gold);
             font-family: var(--font-mono);
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             font-weight: 700;
             padding: 0.25rem 0.65rem;
             border-radius: 6px;
-            border: 1px solid var(--border-color);
+            border: 1px solid rgba(217, 119, 6, 0.3);
         }
 
         .q-topic-tag {
-            color: var(--text-muted);
-            font-size: 0.78rem;
-            font-weight: 600;
+            color: var(--brand-blue);
+            font-size: 0.8rem;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
@@ -248,31 +255,38 @@
             transition: all 0.15s;
         }
 
+        .flag-btn:hover {
+            border-color: var(--brand-gold);
+            color: var(--brand-gold);
+            background: rgba(245, 158, 11, 0.08);
+        }
+
         .flag-btn.flagged {
             background: rgba(245, 158, 11, 0.15);
             border-color: var(--brand-gold);
-            color: var(--brand-gold-light);
+            color: var(--brand-gold);
         }
 
         .q-text {
-            font-size: 1.12rem;
-            font-weight: 600;
+            font-size: 1.15rem;
+            font-weight: 700;
             line-height: 1.55;
             color: var(--text-main);
             margin-bottom: 1rem;
         }
 
         .q-code {
-            background: #0d1117;
-            border: 1px solid #30363d;
+            background: #0f172a;
+            border: 1px solid #1e293b;
             border-radius: 8px;
             padding: 1rem 1.25rem;
             font-family: var(--font-mono);
             font-size: 0.92rem;
-            line-height: 1.5;
-            color: #e6edf3;
+            line-height: 1.55;
+            color: #f8fafc;
             margin-bottom: 1.5rem;
             overflow-x: auto;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .options-list {
@@ -285,7 +299,7 @@
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: var(--radius-md);
-            padding: 0.9rem 1.25rem;
+            padding: 0.95rem 1.25rem;
             display: flex;
             align-items: flex-start;
             gap: 1rem;
@@ -295,7 +309,7 @@
         }
 
         .option-item:hover {
-            border-color: #4b5e7e;
+            border-color: var(--brand-blue);
             background: var(--bg-card-hover);
             transform: translateX(4px);
         }
@@ -327,14 +341,14 @@
 
         /* Option Feedback States */
         .option-item.selected {
-            border-color: var(--brand-blue-light);
-            background: #1e3a8a30;
+            border-color: var(--brand-blue);
+            background: rgba(37, 99, 235, 0.08);
         }
 
         .option-item.selected .option-letter {
             background: var(--brand-blue);
-            color: #fff;
-            border-color: var(--brand-blue-light);
+            color: #ffffff;
+            border-color: var(--brand-blue);
         }
 
         .option-item.correct {
@@ -344,7 +358,7 @@
 
         .option-item.correct .option-letter {
             background: var(--accent-green) !important;
-            color: #fff !important;
+            color: #ffffff !important;
             border-color: var(--accent-green) !important;
         }
 
@@ -355,7 +369,7 @@
 
         .option-item.incorrect .option-letter {
             background: var(--accent-red) !important;
-            color: #fff !important;
+            color: #ffffff !important;
             border-color: var(--accent-red) !important;
         }
 
@@ -367,7 +381,7 @@
         .explanation-box {
             display: none;
             margin-top: 1.5rem;
-            background: var(--bg-primary);
+            background: #f8fafc;
             border-radius: var(--radius-md);
             border: 1px solid var(--border-color);
             padding: 1.25rem 1.5rem;
@@ -392,11 +406,11 @@
             margin-bottom: 0.5rem;
         }
 
-        .explanation-header.correct { color: #34d399; }
-        .explanation-header.incorrect { color: #f87171; }
+        .explanation-header.correct { color: var(--accent-green); }
+        .explanation-header.incorrect { color: var(--accent-red); }
 
         .explanation-body {
-            font-size: 0.9rem;
+            font-size: 0.92rem;
             line-height: 1.6;
             color: var(--text-main);
         }
@@ -407,7 +421,8 @@
             background: rgba(37, 99, 235, 0.08);
             padding: 2px 6px;
             border-radius: 4px;
-            font-size: 0.85rem;
+            font-size: 0.88rem;
+            border: 1px solid rgba(37, 99, 235, 0.15);
         }
 
         /* Sidebar: Navigator & Analytics */
@@ -428,10 +443,10 @@
         }
 
         .score-card h3 {
-            font-size: 1rem;
-            color: #fff;
+            font-size: 1.05rem;
+            color: var(--text-main);
             margin-bottom: 1rem;
-            font-weight: 700;
+            font-weight: 800;
         }
 
         .score-stats {
@@ -442,7 +457,7 @@
         }
 
         .stat-box {
-            background: var(--bg-card);
+            background: var(--bg-primary);
             border: 1px solid var(--border-color);
             border-radius: 8px;
             padding: 0.75rem;
@@ -450,18 +465,19 @@
         }
 
         .stat-value {
-            font-size: 1.5rem;
+            font-size: 1.45rem;
             font-weight: 800;
             font-family: var(--font-mono);
-            color: #fff;
+            color: var(--text-main);
         }
 
         .stat-label {
             font-size: 0.72rem;
             color: var(--text-muted);
             text-transform: uppercase;
-            font-weight: 600;
+            font-weight: 700;
             margin-top: 2px;
+            letter-spacing: 0.03em;
         }
 
         /* Question Grid Palette */
@@ -475,15 +491,17 @@
 
         .nav-grid-box h4 {
             font-size: 0.88rem;
-            color: #cbd5e1;
+            color: var(--text-main);
+            font-weight: 700;
             margin-bottom: 0.75rem;
             display: flex;
             justify-content: space-between;
+            align-items: center;
         }
 
         .q-palette {
             display: grid;
-            grid-template-columns: repeat(7, 1fr);
+            grid-template-columns: repeat(8, 1fr);
             gap: 6px;
             max-height: 250px;
             overflow-y: auto;
@@ -493,9 +511,9 @@
         .palette-cell {
             aspect-ratio: 1;
             border-radius: 6px;
-            background: var(--bg-card);
+            background: var(--bg-primary);
             border: 1px solid var(--border-color);
-            color: var(--text-muted);
+            color: var(--text-main);
             font-family: var(--font-mono);
             font-size: 0.75rem;
             font-weight: 700;
@@ -507,30 +525,32 @@
         }
 
         .palette-cell:hover {
-            border-color: var(--brand-blue-light);
-            color: #fff;
+            border-color: var(--brand-blue);
+            color: var(--brand-blue);
+            background: rgba(37, 99, 235, 0.08);
         }
 
         .palette-cell.current {
-            border-color: var(--brand-blue-light);
-            background: #2563eb40;
-            color: #fff;
+            border-color: var(--brand-blue);
+            background: var(--brand-blue);
+            color: #ffffff !important;
+            box-shadow: 0 2px 6px rgba(37, 99, 235, 0.35);
         }
 
         .palette-cell.correct {
-            background: var(--accent-green);
-            color: #fff;
-            border-color: var(--accent-green);
+            background: var(--accent-green) !important;
+            color: #ffffff !important;
+            border-color: var(--accent-green) !important;
         }
 
         .palette-cell.incorrect {
-            background: var(--accent-red);
-            color: #fff;
-            border-color: var(--accent-red);
+            background: var(--accent-red) !important;
+            color: #ffffff !important;
+            border-color: var(--accent-red) !important;
         }
 
         .palette-cell.flagged {
-            border-color: var(--brand-gold);
+            border-color: var(--brand-gold) !important;
             position: relative;
         }
 
@@ -554,9 +574,9 @@
         }
 
         .action-btn {
-            background: #2b394f;
-            color: #fff;
-            border: 1px solid #4b5e7e;
+            background: #ffffff;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
             padding: 0.6rem 1.4rem;
             border-radius: 8px;
             font-size: 0.88rem;
@@ -569,13 +589,22 @@
         }
 
         .action-btn:hover {
-            background: var(--brand-blue);
-            border-color: var(--brand-blue-light);
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+            color: var(--brand-blue);
         }
 
         .action-btn.primary {
             background: var(--brand-blue);
-            border-color: var(--brand-blue-light);
+            border-color: var(--brand-blue);
+            color: #ffffff;
+            box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
+        }
+
+        .action-btn.primary:hover {
+            background: var(--brand-blue-hover);
+            border-color: var(--brand-blue-hover);
+            color: #ffffff;
         }
 
         .action-btn:disabled {
@@ -590,7 +619,7 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: rgba(0, 0, 0, 0.85);
+            background: rgba(15, 23, 42, 0.65);
             backdrop-filter: blur(8px);
             z-index: 1000;
             display: none;
@@ -611,28 +640,28 @@
             max-width: 600px;
             padding: 2.5rem;
             text-align: center;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
         }
 
         .result-score-ring {
             width: 130px;
             height: 130px;
             border-radius: 50%;
-            background: #0f172a;
+            background: var(--bg-primary);
             border: 6px solid var(--brand-blue);
             margin: 1.5rem auto;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 0 25px rgba(37, 99, 235, 0.4);
+            box-shadow: 0 4px 16px rgba(37, 99, 235, 0.25);
         }
 
         .result-pct {
             font-size: 2.2rem;
             font-weight: 800;
             font-family: var(--font-mono);
-            color: #fff;
+            color: var(--text-main);
         }
     </style>
 </head>
@@ -644,7 +673,7 @@
             <img src="data:image/jpeg;base64,/9j/2wCEAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx4BBQUFBwYHDggIDh4UERQeHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHv/AABEIANgCTAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2gAMAwEAAhEDEQA/APqiiiivNPTCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiig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" alt="Edulateral Foundation" class="header-logo-img">
             <div class="header-title-text">
                 <h1>Edulateral <span>Foundation</span> &times; GLA University</h1>
-                <p>Python Programming Mastery &bull; Day 1 Afternoon Session Assessment (35 MCQs)</p>
+                <p>Python Programming Mastery &bull; Day 1 Afternoon Session Assessment (40 MCQs)</p>
             </div>
         </div>
 
@@ -655,7 +684,7 @@
             </div>
             <div class="timer-badge" id="examTimer">
                 <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                <span id="timerText">35:00</span>
+                <span id="timerText">40:00</span>
             </div>
         </div>
     </header>
@@ -667,19 +696,19 @@
         <main>
             <!-- Topic Filter Tabs -->
             <div class="topic-filters">
-                <button class="filter-chip active" onclick="filterByTopic('all', this)">All (35)</button>
+                <button class="filter-chip active" onclick="filterByTopic('all', this)">All (40)</button>
                 <button class="filter-chip" onclick="filterByTopic('comprehensions', this)">List Comprehensions (8)</button>
-                <button class="filter-chip" onclick="filterByTopic('builtins', this)">Companions: sorted/enum/zip (5)</button>
-                <button class="filter-chip" onclick="filterByTopic('slicing', this)">Strings: Slicing & Memory (7)</button>
-                <button class="filter-chip" onclick="filterByTopic('methods', this)">String Methods (10)</button>
-                <button class="filter-chip" onclick="filterByTopic('formatting', this)">Formatting & Traps (5)</button>
+                <button class="filter-chip" onclick="filterByTopic('builtins', this)">Companions: sorted/enum/zip (6)</button>
+                <button class="filter-chip" onclick="filterByTopic('slicing', this)">Strings: Slicing & Memory (8)</button>
+                <button class="filter-chip" onclick="filterByTopic('methods', this)">Core String Methods (11)</button>
+                <button class="filter-chip" onclick="filterByTopic('formatting', this)">Advanced Methods & Formatting (7)</button>
             </div>
 
             <!-- Single Question Card Container -->
             <div class="question-card" id="questionCard">
                 <div class="q-header">
                     <div class="q-tag-group">
-                        <span class="q-num-pill" id="qNumberPill">Q1 / 35</span>
+                        <span class="q-num-pill" id="qNumberPill">Q1 of 40</span>
                         <span class="q-topic-tag" id="qTopicTag">List Comprehensions</span>
                     </div>
                     <button class="flag-btn" id="qFlagBtn" onclick="toggleFlag()">
@@ -730,7 +759,7 @@
                 <h3>Assessment Analytics</h3>
                 <div class="score-stats">
                     <div class="stat-box">
-                        <div class="stat-value" id="statAttempted" style="color: var(--brand-blue-light);">0</div>
+                        <div class="stat-value" id="statAttempted" style="color: var(--brand-blue);">0/40</div>
                         <div class="stat-label">Answered</div>
                     </div>
                     <div class="stat-box">
@@ -738,11 +767,11 @@
                         <div class="stat-label">Score</div>
                     </div>
                     <div class="stat-box">
-                        <div class="stat-value" id="statAccuracy" style="color: var(--brand-gold-light);">0%</div>
+                        <div class="stat-value" id="statAccuracy" style="color: var(--brand-gold);">0%</div>
                         <div class="stat-label">Accuracy</div>
                     </div>
                     <div class="stat-box">
-                        <div class="stat-value" id="statFlagged" style="color: #c084fc;">0</div>
+                        <div class="stat-value" id="statFlagged" style="color: var(--accent-purple);">0</div>
                         <div class="stat-label">Flagged</div>
                     </div>
                 </div>
@@ -755,10 +784,10 @@
             <div class="nav-grid-box">
                 <h4>
                     <span>Question Palette</span>
-                    <span id="paletteCount" style="color: var(--brand-gold-light); font-family: var(--font-mono);">1/35</span>
+                    <span id="paletteCount" style="color: var(--brand-gold); font-family: var(--font-mono); font-weight: 700;">1/40</span>
                 </h4>
                 <div class="q-palette" id="qPalette">
-                    <!-- 35 cells populated by JS -->
+                    <!-- 40 cells populated by JS -->
                 </div>
             </div>
         </aside>
@@ -768,14 +797,14 @@
     <!-- Final Scorecard Modal -->
     <div class="modal-overlay" id="scoreModal">
         <div class="result-modal">
-            <h2 style="font-size: 1.8rem; color: #fff;">Assessment Scorecard</h2>
+            <h2 style="font-size: 1.8rem; color: var(--text-main); font-weight: 800;">Assessment Scorecard</h2>
             <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.35rem;">
                 Edulateral Foundation &bull; GLA University Python Training (Day 1)
             </p>
 
             <div class="result-score-ring">
                 <span class="result-pct" id="modalAccuracy">0%</span>
-                <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase;">Accuracy</span>
+                <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Accuracy</span>
             </div>
 
             <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.5rem 0;">
@@ -788,12 +817,12 @@
                     <div class="stat-label">Incorrect</div>
                 </div>
                 <div class="stat-box">
-                    <div class="stat-value" id="modalUnanswered" style="color: var(--brand-gold-light);">0</div>
+                    <div class="stat-value" id="modalUnanswered" style="color: var(--brand-gold);">0</div>
                     <div class="stat-label">Skipped</div>
                 </div>
             </div>
 
-            <p id="modalPerformanceRemark" style="font-size: 1rem; color: #cbd5e1; margin-bottom: 2rem;"></p>
+            <p id="modalPerformanceRemark" style="font-size: 1rem; color: var(--text-main); font-weight: 600; margin-bottom: 2rem;"></p>
 
             <div style="display: flex; gap: 1rem; justify-content: center;">
                 <button class="action-btn" onclick="closeScoreModal()">Review Answers</button>
@@ -802,46 +831,45 @@
         </div>
     </div>
 
-    <!-- QUESTIONS REPOSITORY (35 Rigorous Placement-Grade Questions) -->
+    <!-- QUESTIONS REPOSITORY (40 Rigorous Placement-Grade Questions) -->
     <script>
         const QUESTIONS = [
-            // TOPIC 1: LIST COMPREHENSIONS (Q1 - Q8)
             {
                 id: 1,
-                topic: 'comprehensions',
-                topicLabel: 'List Comprehensions',
-                text: 'What is the output of the following conditional list comprehension?',
-                code: 'nums = [1, 2, 3, 4, 5, 6]\nres = [x * 2 for x in nums if x % 2 == 0]\nprint(res)',
+                topic: "comprehensions",
+                topicLabel: "List Comprehensions",
+                text: "What is the output of the following conditional list comprehension?",
+                code: "nums = [1, 2, 3, 4, 5, 6]\nres = [x * 2 for x in nums if x % 2 == 0]\nprint(res)",
                 options: [
-                    '[2, 4, 6, 8, 10, 12]',
-                    '[4, 8, 12]',
-                    '[2, 6, 10]',
-                    'SyntaxError: invalid syntax'
+                    "[2, 4, 6, 8, 10, 12]",
+                    "[4, 8, 12]",
+                    "[2, 6, 10]",
+                    "SyntaxError: invalid syntax"
                 ],
                 correct: 1,
-                explanation: 'The comprehension filters elements using <code>if x % 2 == 0</code>, keeping only even numbers <code>[2, 4, 6]</code>. Then the expression <code>x * 2</code> multiplies each by 2, yielding <code>[4, 8, 12]</code>.'
+                explanation: "The comprehension filters elements using <code>if x % 2 == 0</code>, keeping only even numbers <code>[2, 4, 6]</code>. Then the expression <code>x * 2</code> multiplies each by 2, yielding <code>[4, 8, 12]</code>."
             },
             {
                 id: 2,
-                topic: 'comprehensions',
-                topicLabel: 'List Comprehensions',
-                text: 'What will happen when the following Python code is executed?',
-                code: 'nums = [1, 2, 3, 4, 5]\nres = [x * 2 for x in nums if x > 2 else 0]',
+                topic: "comprehensions",
+                topicLabel: "List Comprehensions",
+                text: "What will happen when the following Python code is executed?",
+                code: "nums = [1, 2, 3, 4, 5]\nres = [x * 2 for x in nums if x > 2 else 0]",
                 options: [
-                    '[0, 0, 6, 8, 10]',
-                    '[6, 8, 10]',
-                    'SyntaxError: invalid syntax',
-                    'TypeError: unhashable type'
+                    "[0, 0, 6, 8, 10]",
+                    "[6, 8, 10]",
+                    "SyntaxError: invalid syntax",
+                    "TypeError: unhashable type"
                 ],
                 correct: 2,
-                explanation: '<strong>Top Placement Interview Trap!</strong> An <code>if-else</code> ternary operator cannot be placed at the end of a comprehension. Trailing <code>if</code> is strictly a filter condition without an <code>else</code>. To substitute values with an else, the syntax must precede the for clause: <code>[x * 2 if x > 2 else 0 for x in nums]</code>.'
+                explanation: "<strong>Top Placement Interview Trap!</strong> An <code>if-else</code> ternary operator cannot be placed at the end of a comprehension. Trailing <code>if</code> is strictly a filter condition without an <code>else</code>. To substitute values with an else, the syntax must precede the for clause: <code>[x * 2 if x > 2 else 0 for x in nums]</code>."
             },
             {
                 id: 3,
-                topic: 'comprehensions',
-                topicLabel: 'List Comprehensions',
-                text: 'What is the output of this ternary list comprehension?',
-                code: 'res = ["EVEN" if x % 2 == 0 else "ODD" for x in range(4)]\nprint(res)',
+                topic: "comprehensions",
+                topicLabel: "List Comprehensions",
+                text: "What is the output of this ternary list comprehension?",
+                code: "res = [\"EVEN\" if x % 2 == 0 else \"ODD\" for x in range(4)]\nprint(res)",
                 options: [
                     "['ODD', 'EVEN', 'ODD', 'EVEN']",
                     "['EVEN', 'ODD', 'EVEN', 'ODD']",
@@ -849,106 +877,104 @@
                     "SyntaxError: invalid syntax"
                 ],
                 correct: 1,
-                explanation: '<code>range(4)</code> generates 0, 1, 2, 3. For 0: 0%2==0 is True -> "EVEN". For 1: False -> "ODD". For 2: True -> "EVEN". For 3: False -> "ODD". Result is <code>[\'EVEN\', \'ODD\', \'EVEN\', \'ODD\']</code>.'
+                explanation: "Here the ternary expression <code>\"EVEN\" if x % 2 == 0 else \"ODD\"</code> is correctly placed in the expression slot preceding <code>for</code>. For <code>range(4)</code> (0, 1, 2, 3): 0 is EVEN, 1 is ODD, 2 is EVEN, 3 is ODD."
             },
             {
                 id: 4,
-                topic: 'comprehensions',
-                topicLabel: 'List Comprehensions',
-                text: 'What is the output of the following nested list comprehension on a 2D matrix?',
-                code: 'matrix = [[1, 2], [3, 4], [5, 6]]\nflattened = [x for row in matrix for x in row]\nprint(flattened)',
+                topic: "comprehensions",
+                topicLabel: "List Comprehensions",
+                text: "What is the output of the following nested list comprehension on a 2D matrix?",
+                code: "matrix = [[1, 2], [3, 4], [5, 6]]\nflattened = [x for row in matrix for x in row]\nprint(flattened)",
                 options: [
-                    '[[1, 2], [3, 4], [5, 6]]',
-                    '[1, 2, 3, 4, 5, 6]',
-                    '[1, 3, 5, 2, 4, 6]',
-                    'SyntaxError: cannot unpack non-iterable'
+                    "[[1, 2], [3, 4], [5, 6]]",
+                    "[1, 2, 3, 4, 5, 6]",
+                    "[1, 3, 5, 2, 4, 6]",
+                    "SyntaxError: cannot unpack non-iterable"
                 ],
                 correct: 1,
-                explanation: 'In nested list comprehensions, the loop order reads exactly like nested for-loops: <code>for row in matrix: for x in row:</code>. This flattens the 2D array row by row into <code>[1, 2, 3, 4, 5, 6]</code>.'
+                explanation: "In nested list comprehensions, the loop order reads exactly like nested for-loops: <code>for row in matrix: for x in row:</code>. This flattens the 2D array row by row into <code>[1, 2, 3, 4, 5, 6]</code>."
             },
             {
                 id: 5,
-                topic: 'comprehensions',
-                topicLabel: 'List Comprehensions',
-                text: 'What does the following matrix manipulation produce?',
-                code: 'matrix = [[1, 2, 3], [4, 5, 6]]\nres = [[row[i] for row in matrix] for i in range(3)]\nprint(res)',
+                topic: "comprehensions",
+                topicLabel: "List Comprehensions",
+                text: "What does the following matrix manipulation produce?",
+                code: "matrix = [[1, 2, 3], [4, 5, 6]]\nres = [[row[i] for row in matrix] for i in range(3)]\nprint(res)",
                 options: [
-                    '[[1, 2, 3], [4, 5, 6]]',
-                    '[[1, 4], [2, 5], [3, 6]]',
-                    '[1, 2, 3, 4, 5, 6]',
-                    'IndexError: list index out of range'
+                    "[[1, 2, 3], [4, 5, 6]]",
+                    "[[1, 4], [2, 5], [3, 6]]",
+                    "[1, 2, 3, 4, 5, 6]",
+                    "IndexError: list index out of range"
                 ],
                 correct: 1,
-                explanation: 'This is the canonical Python idiom for <strong>Matrix Transpose</strong>. For each column index i in range(3), it collects <code>row[i]</code> across all rows, swapping the 2x3 matrix into a 3x2 matrix <code>[[1, 4], [2, 5], [3, 6]]</code>.'
+                explanation: "This is the canonical Python idiom for <strong>Matrix Transpose</strong>. For each column index i in range(3), it collects <code>row[i]</code> across all rows, swapping the 2x3 matrix into a 3x2 matrix <code>[[1, 4], [2, 5], [3, 6]]</code>."
             },
             {
                 id: 6,
-                topic: 'comprehensions',
-                topicLabel: 'List Comprehensions',
-                text: 'Does the iteration variable leak outside a list comprehension in Python 3?',
-                code: 'x = 100\nres = [x for x in range(5)]\nprint(x)',
+                topic: "comprehensions",
+                topicLabel: "List Comprehensions",
+                text: "Does the iteration variable leak outside a list comprehension in Python 3?",
+                code: "x = 100\nres = [x for x in range(5)]\nprint(x)",
                 options: [
-                    '4',
-                    '5',
-                    '100',
-                    'UnboundLocalError'
+                    "4",
+                    "5",
+                    "100",
+                    "NameError: name 'x' is not defined"
                 ],
                 correct: 2,
-                explanation: 'In Python 3, list comprehensions have their own distinct local function scope. The loop variable <code>x</code> inside the comprehension does NOT overwrite or leak into the outer scope. Hence <code>x</code> remains <code>100</code>.'
+                explanation: "In Python 2, list comprehension variables leaked into the enclosing scope. In <strong>Python 3</strong>, comprehensions are compiled into their own distinct function-level scope frame. The outer variable <code>x = 100</code> remains completely untouched and outputs <code>100</code>."
             },
             {
                 id: 7,
-                topic: 'comprehensions',
-                topicLabel: 'List Comprehensions',
-                text: 'What is the output of this comprehension with multiple condition filters?',
-                code: 'res = [x for x in range(20) if x % 2 == 0 if x % 3 == 0]\nprint(res)',
+                topic: "comprehensions",
+                topicLabel: "List Comprehensions",
+                text: "What is the output of this comprehension with multiple condition filters?",
+                code: "res = [x for x in range(20) if x % 2 == 0 if x % 3 == 0]\nprint(res)",
                 options: [
-                    '[0, 6, 12, 18]',
-                    '[6, 12, 18]',
-                    '[0, 2, 3, 4, 6, 8, 9, 10, 12, 14, 15, 16, 18]',
-                    'SyntaxError: multiple if conditions not permitted'
+                    "[0, 6, 12, 18]",
+                    "[6, 12, 18]",
+                    "[0, 2, 3, 4, 6, 8, 9, 10, 12, 14, 15, 16, 18]",
+                    "SyntaxError: multiple if conditions not permitted"
                 ],
                 correct: 0,
-                explanation: 'Chained <code>if</code> clauses act as a logical <code>AND</code>. Only numbers divisible by both 2 and 3 (i.e., multiples of 6) pass. Since range(20) starts at 0, 0 % 6 == 0 is True. Output: <code>[0, 6, 12, 18]</code>.'
+                explanation: "Chained <code>if</code> clauses act as a logical <code>AND</code>. Only numbers divisible by both 2 and 3 (i.e., multiples of 6) pass. Since range(20) starts at 0, 0 % 6 == 0 is True. Output: <code>[0, 6, 12, 18]</code>."
             },
             {
                 id: 8,
-                topic: 'comprehensions',
-                topicLabel: 'List Comprehensions',
-                text: 'Why is a list comprehension faster than an equivalent manual for-loop with .append() in CPython?',
-                code: '# Method A: [x*2 for x in data]\n# Method B: for x in data: res.append(x*2)',
+                topic: "comprehensions",
+                topicLabel: "List Comprehensions",
+                text: "Why is a list comprehension faster than an equivalent manual for-loop with .append() in CPython?",
+                code: "# Method A: [x*2 for x in data]\n# Method B: for x in data: res.append(x*2)",
                 options: [
-                    'List comprehensions run on multiple CPU threads simultaneously',
-                    'CPython converts list comprehensions to C pointers without type checking',
-                    'CPython uses specialized LIST_APPEND bytecode instruction avoiding method lookup overhead',
-                    'List comprehensions bypass Python interpreter and execute in GPU memory'
+                    "Comprehensions run automatically on multiple CPU cores in parallel",
+                    "Comprehensions use JIT compiler optimization to bypass the GIL",
+                    "CPython uses specialized LIST_APPEND bytecode in C, avoiding repeated method lookup and Python stack overhead",
+                    "There is no speed difference; it is purely cosmetic syntax sugar"
                 ],
                 correct: 2,
-                explanation: 'In CPython, <code>.append()</code> inside a loop incurs repetitive attribute lookup and Python frame push/pop. Comprehensions execute the low-level <code>LIST_APPEND</code> bytecode directly in C, resulting in 25-35% faster execution.'
+                explanation: "In CPython, <code>.append()</code> inside a loop incurs repetitive attribute lookup and Python frame push/pop. Comprehensions execute the low-level <code>LIST_APPEND</code> bytecode directly in C, resulting in 25-35% faster execution."
             },
-
-            // TOPIC 2: COMPANION BUILT-INS (Q9 - Q13)
             {
                 id: 9,
-                topic: 'builtins',
-                topicLabel: 'Built-in Utilities',
-                text: 'What is the fundamental difference between sorted(lst) and lst.sort()?',
-                code: 'a = [3, 1, 2]\nb = sorted(a)\nc = a.sort()',
+                topic: "builtins",
+                topicLabel: "Built-in Utilities",
+                text: "What is the fundamental difference between sorted(lst) and lst.sort()?",
+                code: "a = [3, 1, 2]\nb = sorted(a)\nc = a.sort()",
                 options: [
-                    'sorted() sorts in-place; .sort() returns a new list',
-                    'sorted() returns a new list leaving original intact; .sort() mutates original in-place and returns None',
-                    'Both return new lists, but .sort() is O(N) and sorted() is O(N log N)',
-                    'There is no difference; they are aliases'
+                    "sorted() sorts in-place; .sort() returns a new list",
+                    "sorted() returns a new list leaving original intact; .sort() mutates original in-place and returns None",
+                    "Both return new lists, but .sort() is O(N) and sorted() is O(N log N)",
+                    "There is no difference; they are aliases"
                 ],
                 correct: 1,
-                explanation: '<code>sorted()</code> is a built-in function that creates and returns a brand new sorted list. <code>.sort()</code> is a method of list objects that mutates the list in place and returns <code>None</code>. Assigning <code>c = a.sort()</code> sets c to None!'
+                explanation: "<code>sorted()</code> is a built-in function that creates and returns a brand new sorted list. <code>.sort()</code> is a method of list objects that mutates the list in place and returns <code>None</code>. Assigning <code>c = a.sort()</code> sets c to None!"
             },
             {
                 id: 10,
-                topic: 'builtins',
-                topicLabel: 'Built-in Utilities',
-                text: 'What is the output of sorting with a custom key function?',
-                code: 'words = ["banana", "pie", "apple", "kiwi"]\nprint(sorted(words, key=len))',
+                topic: "builtins",
+                topicLabel: "Built-in Utilities",
+                text: "What is the output of sorting with a custom key function?",
+                code: "words = [\"banana\", \"pie\", \"apple\", \"kiwi\"]\nprint(sorted(words, key=len))",
                 options: [
                     "['apple', 'banana', 'kiwi', 'pie']",
                     "['pie', 'kiwi', 'apple', 'banana']",
@@ -956,136 +982,149 @@
                     "[3, 4, 5, 6]"
                 ],
                 correct: 1,
-                explanation: 'The <code>key=len</code> parameter sorts elements by length: "pie" (3), "kiwi" (4), "apple" (5), "banana" (6). Python\'s Timsort is stable, maintaining relative order of equal keys.'
+                explanation: "The <code>key=len</code> parameter sorts elements by length: \"pie\" (3), \"kiwi\" (4), \"apple\" (5), \"banana\" (6). Python's Timsort is stable, maintaining relative order of equal keys."
             },
             {
                 id: 11,
-                topic: 'builtins',
-                topicLabel: 'Built-in Utilities',
-                text: 'What does enumerate(iterable, start=1) produce?',
-                code: 'colors = ["red", "green"]\nfor item in enumerate(colors, start=1):\n    print(item)',
+                topic: "builtins",
+                topicLabel: "Built-in Utilities",
+                text: "What does enumerate(iterable, start=1) produce?",
+                code: "colors = [\"red\", \"green\"]\nfor item in enumerate(colors, start=1):\n    print(item)",
                 options: [
-                    '(0, \'red\') and (1, \'green\')',
-                    '(1, \'red\') and (2, \'green\')',
-                    '1: \'red\' and 2: \'green\'',
-                    'TypeError: start argument must be 0'
+                    "(0, 'red') and (1, 'green')",
+                    "(1, 'red') and (2, 'green')",
+                    "1: 'red' and 2: 'green'",
+                    "TypeError: start argument must be 0"
                 ],
                 correct: 1,
-                explanation: '<code>enumerate()</code> yields 2-tuples containing <code>(index, element)</code>. Setting <code>start=1</code> offsets the index counter so it begins at 1 instead of 0.'
+                explanation: "<code>enumerate()</code> yields 2-tuples containing <code>(index, element)</code>. Setting <code>start=1</code> offsets the index counter so it begins at 1 instead of 0."
             },
             {
                 id: 12,
-                topic: 'builtins',
-                topicLabel: 'Built-in Utilities',
-                text: 'What happens when zip() is called on iterables of unequal length in default Python 3.9?',
-                code: 'a = [1, 2, 3, 4]\nb = [\'a\', \'b\']\nprint(list(zip(a, b)))',
+                topic: "builtins",
+                topicLabel: "Built-in Utilities",
+                text: "What happens when zip() is called on iterables of unequal length in default Python 3.9?",
+                code: "a = [1, 2, 3, 4]\nb = ['a', 'b']\nprint(list(zip(a, b)))",
                 options: [
-                    '[(1, \'a\'), (2, \'b\'), (3, None), (4, None)]',
-                    '[(1, \'a\'), (2, \'b\')]',
-                    'ValueError: iterables have unequal length',
-                    'IndexError: list index out of range'
+                    "[(1, 'a'), (2, 'b'), (3, None), (4, None)]",
+                    "[(1, 'a'), (2, 'b')]",
+                    "ValueError: iterables have unequal length",
+                    "IndexError: list index out of range"
                 ],
                 correct: 1,
-                explanation: 'By default, <code>zip()</code> stops as soon as the shortest iterable is exhausted, silently dropping the remaining items <code>3, 4</code>. (In Python 3.10+, <code>strict=True</code> can be passed to raise ValueError).'
+                explanation: "By default, <code>zip()</code> stops as soon as the shortest iterable is exhausted, silently dropping the remaining items <code>3, 4</code>. (In Python 3.10+, <code>strict=True</code> can be passed to raise ValueError)."
             },
             {
                 id: 13,
-                topic: 'builtins',
-                topicLabel: 'Built-in Utilities',
-                text: 'What does zip(*matrix) do when matrix is a list of tuples/lists?',
-                code: 'matrix = [(1, 2), (3, 4), (5, 6)]\nprint(list(zip(*matrix)))',
+                topic: "builtins",
+                topicLabel: "Built-in Utilities",
+                text: "What does zip(*matrix) do when matrix is a list of tuples/lists?",
+                code: "matrix = [(1, 2), (3, 4), (5, 6)]\nprint(list(zip(*matrix)))",
                 options: [
-                    '[(1, 2), (3, 4), (5, 6)]',
-                    '[(1, 3, 5), (2, 4, 6)]',
-                    '[1, 2, 3, 4, 5, 6]',
-                    'TypeError: zip argument after * must be an iterable'
+                    "[(1, 2), (3, 4), (5, 6)]",
+                    "[(1, 3, 5), (2, 4, 6)]",
+                    "[1, 2, 3, 4, 5, 6]",
+                    "TypeError: zip argument after * must be an iterable"
                 ],
                 correct: 1,
-                explanation: 'The argument unpacking operator <code>*matrix</code> unpacks the 3 tuples as individual arguments: <code>zip((1,2), (3,4), (5,6))</code>. Zip then pairs up all first elements (1,3,5) and second elements (2,4,6). This is the famous Python "unzip" idiom.'
+                explanation: "The argument unpacking operator <code>*matrix</code> unpacks the 3 tuples as individual arguments: <code>zip((1,2), (3,4), (5,6))</code>. Zip then pairs up all first elements (1,3,5) and second elements (2,4,6). This is the famous Python \"unzip\" idiom."
             },
-
-            // TOPIC 3: STRINGS: BASICS, IMMUTABILITY & SLICING (Q14 - Q20)
             {
                 id: 14,
-                topic: 'slicing',
-                topicLabel: 'Strings & Slicing',
-                text: 'What will be printed by this raw string literal?',
-                code: 's = r"C:\\new_folder\\test.py"\nprint(s)',
+                topic: "builtins",
+                topicLabel: "Built-in Utilities",
+                text: "What is the output of sorting with a key function and reverse=True on equal-length items?",
+                code: "words = [\"python\", \"c\", \"java\", \"go\", \"rust\"]\nprint(sorted(words, key=len, reverse=True))",
                 options: [
-                    'C:\\new_folder\\test.py',
-                    'C:\new_folder\test.py',
-                    'C:\new_folder   est.py (with newline and tab)',
-                    'SyntaxError: unexpected raw prefix'
+                    "['python', 'rust', 'java', 'go', 'c']",
+                    "['python', 'java', 'rust', 'go', 'c']",
+                    "['c', 'go', 'rust', 'java', 'python']",
+                    "['python', 'rust', 'java', 'c', 'go']"
                 ],
-                correct: 0,
-                explanation: 'The <code>r</code> prefix creates a <strong>raw string literal</strong> where backslashes are treated as literal characters rather than escape sequence prefixes. <code>\\n</code> and <code>\\t</code> are NOT expanded.'
+                correct: 1,
+                explanation: "<code>sorted()</code> uses <strong>Timsort</strong>, which is guaranteed to be a <strong>stable sorting algorithm</strong>. When items have equal keys (both <code>'java'</code> and <code>'rust'</code> have length 4), their original relative order is preserved. In descending order (<code>reverse=True</code>), the result is <code>['python', 'java', 'rust', 'go', 'c']</code>."
             },
             {
                 id: 15,
-                topic: 'slicing',
-                topicLabel: 'Strings & Slicing',
-                text: 'What is the output of the carriage return escape sequence \\r?',
-                code: 'print("Python\\rGLA")',
+                topic: "slicing",
+                topicLabel: "Strings & Slicing",
+                text: "What will be printed by this raw string literal?",
+                code: "s = r\"C:\\new_folder\\test.py\"\nprint(s)",
                 options: [
-                    'PythonGLA',
-                    'GLAhon',
-                    'Python\\rGLA',
-                    'GLA'
+                    "C:\\new_folder\\test.py",
+                    "C:\new_folder\test.py",
+                    "C:\new_folder   est.py (with newline and tab)",
+                    "SyntaxError: unexpected raw prefix"
                 ],
-                correct: 1,
-                explanation: '<code>\\r</code> moves the cursor back to the beginning of the line without advancing to the next line. Then <code>GLA</code> overwrites the first 3 characters <code>Pyt</code>, leaving <code>hon</code> intact. The output is <code>GLAhon</code>.'
+                correct: 0,
+                explanation: "The <code>r</code> prefix creates a <strong>raw string literal</strong> where backslashes are treated as literal characters rather than escape sequence prefixes. <code>\\n</code> and <code>\\t</code> are NOT expanded."
             },
             {
                 id: 16,
-                topic: 'slicing',
-                topicLabel: 'Strings & Slicing',
-                text: 'What error occurs when trying to mutate a string in-place in Python?',
-                code: 's = "GLA"\ns[0] = "P"',
+                topic: "slicing",
+                topicLabel: "Strings & Slicing",
+                text: "What is the output of the carriage return escape sequence \\r?",
+                code: "print(\"Python\\rGLA\")",
                 options: [
-                    'ValueError: string is read only',
-                    'IndexError: string assignment out of bounds',
-                    'TypeError: \'str\' object does not support item assignment',
-                    'AttributeError: \'str\' object has no attribute \'set\''
+                    "PythonGLA",
+                    "GLAhon",
+                    "Python\\rGLA",
+                    "GLA"
                 ],
-                correct: 2,
-                explanation: 'Strings in Python are immutable sequence objects. Attempting to assign to an indexed character raises <code>TypeError: \'str\' object does not support item assignment</code>.'
+                correct: 1,
+                explanation: "<code>\\r</code> moves the cursor back to the beginning of the line without advancing to the next line. Then <code>GLA</code> overwrites the first 3 characters <code>Pyt</code>, leaving <code>hon</code> intact. The output is <code>GLAhon</code>."
             },
             {
                 id: 17,
-                topic: 'slicing',
-                topicLabel: 'Strings & Slicing',
-                text: 'What is the output of string slicing beyond the string boundary?',
-                code: 's = "Python"\nprint(s[2:100])',
+                topic: "slicing",
+                topicLabel: "Strings & Slicing",
+                text: "What error occurs when trying to mutate a string in-place in Python?",
+                code: "s = \"GLA\"\ns[0] = \"P\"",
                 options: [
-                    'IndexError: string index out of range',
-                    "'thon'",
-                    "'' (empty string)",
-                    "'Python'"
+                    "IndexError: string assignment out of range",
+                    "ValueError: immutable sequence modification",
+                    "TypeError: 'str' object does not support item assignment",
+                    "Strings in Python are mutable so no error occurs"
                 ],
-                correct: 1,
-                explanation: 'Unlike indexing (e.g. <code>s[100]</code> which raises IndexError), <strong>slicing in Python is boundary-safe</strong>. Out-of-bounds indices are gracefully clamped to the string length. Slicing from index 2 to 100 returns <code>\'thon\'</code>.'
+                correct: 2,
+                explanation: "In Python, <code>str</code> is strictly <strong>immutable</strong>. Attempting to assign to an indexed character raises <code>TypeError: 'str' object does not support item assignment</code>."
             },
             {
                 id: 18,
-                topic: 'slicing',
-                topicLabel: 'Strings & Slicing',
-                text: 'What does s[::-1] produce on string s = "GLA2026"?',
-                code: 's = "GLA2026"\nprint(s[::-1])',
+                topic: "slicing",
+                topicLabel: "Strings & Slicing",
+                text: "What is the output of string slicing beyond the string boundary?",
+                code: "s = \"Python\"\nprint(s[2:100])",
                 options: [
-                    "'6202ALG'",
-                    "'GLA2026'",
-                    "'6202'",
-                    "IndexError"
+                    "IndexError: string slice out of range",
+                    "'thon'",
+                    "''",
+                    "'Python'"
                 ],
-                correct: 0,
-                explanation: 'A step of <code>-1</code> traverses the string backwards from the last character to the first, producing the reversed string <code>\'6202ALG\'</code> in O(N) time.'
+                correct: 1,
+                explanation: "While indexing past boundaries (<code>s[100]</code>) raises <code>IndexError</code>, Python slicing is <strong>boundary-safe</strong>: it automatically clamps start and stop indices to <code>[0, len(s)]</code> without raising errors."
             },
             {
                 id: 19,
-                topic: 'slicing',
-                topicLabel: 'Strings & Slicing',
-                text: 'What is the result of this directional mismatch slice?',
-                code: 's = "GLA_UNIVERSITY"\nprint(repr(s[1:5:-1]))',
+                topic: "slicing",
+                topicLabel: "Strings & Slicing",
+                text: "What does s[::-1] produce on string s = \"GLA2026\"?",
+                code: "s = \"GLA2026\"\nprint(s[::-1])",
+                options: [
+                    "'6202ALG'",
+                    "'GLA2026'",
+                    "'2026GLA'",
+                    "IndexError: negative step requires explicit start and stop"
+                ],
+                correct: 0,
+                explanation: "Omitting start and stop while passing a step of <code>-1</code> traverses the string in reverse from end to beginning: <code>'6202ALG'</code>."
+            },
+            {
+                id: 20,
+                topic: "slicing",
+                topicLabel: "Strings & Slicing",
+                text: "What is the result of this directional mismatch slice?",
+                code: "s = \"GLA_UNIVERSITY\"\nprint(repr(s[1:5:-1]))",
                 options: [
                     "'AL_G'",
                     "''",
@@ -1093,31 +1132,44 @@
                     "ValueError: slice step cannot be negative"
                 ],
                 correct: 1,
-                explanation: 'When step is negative (<code>-1</code>), Python expects start &gt; stop to move leftwards. Here start=1 and stop=5, so the search condition terminates immediately, yielding an empty string <code>\'\'</code>.'
+                explanation: "When step is negative (<code>-1</code>), Python expects start &gt; stop to move leftwards. Here start=1 and stop=5, so the search condition terminates immediately, yielding an empty string <code>''</code>."
             },
-            {
-                id: 20,
-                topic: 'slicing',
-                topicLabel: 'Strings & Slicing',
-                text: 'What is the output of evaluating "" in "GLA"?',
-                code: 'print("" in "GLA")',
-                options: [
-                    'False',
-                    'True',
-                    'TypeError: empty string cannot be a substring',
-                    'None'
-                ],
-                correct: 1,
-                explanation: 'In Python, the empty string <code>""</code> is formally defined as a substring of every valid string (including another empty string). <code>"" in s</code> is universally <code>True</code>.'
-            },
-
-            // TOPIC 4: STRING METHODS (Q21 - Q30)
             {
                 id: 21,
-                topic: 'methods',
-                topicLabel: 'String Methods',
-                text: 'What is the surprising behavior of s.title() with apostrophes?',
-                code: 's = "they\'re playing"\nprint(s.title())',
+                topic: "slicing",
+                topicLabel: "Strings & Slicing",
+                text: "What is the output of evaluating \"\" in \"GLA\"?",
+                code: "print(\"\" in \"GLA\")",
+                options: [
+                    "False",
+                    "True",
+                    "TypeError: empty substring membership",
+                    "ValueError: substring empty"
+                ],
+                correct: 1,
+                explanation: "In Python, the empty string <code>\"\"</code> is considered a valid substring of every string (including another empty string). <code>\"\" in s</code> always evaluates to <code>True</code>."
+            },
+            {
+                id: 22,
+                topic: "slicing",
+                topicLabel: "Strings & Slicing",
+                text: "What is the length in memory of a string containing backspace escape sequences (\\b)?",
+                code: "s = \"GLA\\b\\bMathura\"\nprint(len(s))",
+                options: [
+                    "8",
+                    "10",
+                    "12",
+                    "14"
+                ],
+                correct: 2,
+                explanation: "<code>\\b</code> is the ASCII/Unicode backspace escape character (code point <code>\\x08</code>), taking exactly <strong>one character position</strong> in Python's internal unicode string memory. Escape sequences like <code>\\b</code> do NOT mutate or erase preceding characters in memory: 3 (<code>\"GLA\"</code>) + 2 (<code>\"\\b\\b\"</code>) + 7 (<code>\"Mathura\"</code>) = <strong>12</strong>."
+            },
+            {
+                id: 23,
+                topic: "methods",
+                topicLabel: "String Methods",
+                text: "What is the surprising behavior of s.title() with apostrophes?",
+                code: "s = \"they're playing\"\nprint(s.title())",
                 options: [
                     "\"They're Playing\"",
                     "\"They'Re Playing\"",
@@ -1125,14 +1177,14 @@
                     "SyntaxError"
                 ],
                 correct: 1,
-                explanation: '<code>str.title()</code> uses a simple rule: uppercase every character following any non-letter. Since the apostrophe <code>\'</code> is punctuation, the following <code>r</code> is treated as the start of a word and capitalized to <code>R</code>, yielding <code>"They\'Re Playing"</code>.'
+                explanation: "<code>str.title()</code> uses a simple rule: uppercase every character following any non-letter. Since the apostrophe <code>'</code> is punctuation, the following <code>r</code> is treated as the start of a word and capitalized to <code>R</code>, yielding <code>\"They'Re Playing\"</code>."
             },
             {
-                id: 22,
-                topic: 'methods',
-                topicLabel: 'String Methods',
-                text: 'What does s.capitalize() do to characters after the first character?',
-                code: 's = "gLA uNIVERSITY"\nprint(s.capitalize())',
+                id: 24,
+                topic: "methods",
+                topicLabel: "String Methods",
+                text: "What does s.capitalize() do to characters after the first character?",
+                code: "s = \"gLA uNIVERSITY\"\nprint(s.capitalize())",
                 options: [
                     "'GLA UNIVERSITY'",
                     "'GLA university'",
@@ -1140,14 +1192,14 @@
                     "'Gla University'"
                 ],
                 correct: 2,
-                explanation: '<code>capitalize()</code> capitalizes the <strong>first character</strong> of the entire string and converts <strong>EVERY OTHER character to lowercase</strong>. Hence <code>gLA uNIVERSITY</code> becomes <code>\'Gla university\'</code>.'
+                explanation: "<code>str.capitalize()</code> converts the <strong>first character to uppercase</strong> AND forcibly converts <strong>all remaining characters to lowercase</strong>. Output: <code>'Gla university'</code>."
             },
             {
-                id: 23,
-                topic: 'methods',
-                topicLabel: 'String Methods',
-                text: 'What is the output of stripping a custom set of characters?',
-                code: 's = "banana"\nprint(s.strip("an"))',
+                id: 25,
+                topic: "methods",
+                topicLabel: "String Methods",
+                text: "What is the output of stripping a custom set of characters?",
+                code: "s = \"banana\"\nprint(s.strip(\"an\"))",
                 options: [
                     "'b'",
                     "'ba'",
@@ -1155,104 +1207,104 @@
                     "''"
                 ],
                 correct: 0,
-                explanation: '<code>strip(chars)</code> treats the argument as a <strong>set of individual characters</strong> to remove from both ends, NOT as a substring! From the right, it strips all \'a\' and \'n\' until reaching \'b\'. Result is <code>\'b\'</code>.'
-            },
-            {
-                id: 24,
-                topic: 'methods',
-                topicLabel: 'String Methods',
-                text: 'What is the crucial difference between split() with no arguments and split(" ")?',
-                code: 's = "  Python   is   cool  "\nprint(len(s.split()), len(s.split(" ")))',
-                options: [
-                    '3 3',
-                    '3 11',
-                    '3 7',
-                    'SyntaxError'
-                ],
-                correct: 1,
-                explanation: '<code>s.split()</code> (sep=None) groups contiguous whitespace into single delimiters and discards leading/trailing whitespace, returning exactly 3 words. <code>s.split(" ")</code> treats every single space as a delimiter, creating multiple empty string entries for consecutive spaces (total 11 items!).'
-            },
-            {
-                id: 25,
-                topic: 'methods',
-                topicLabel: 'String Methods',
-                text: 'What exception is raised when join() is called on a list of integers?',
-                code: 'nums = [1, 2, 3]\nprint("-".join(nums))',
-                options: [
-                    'ValueError: cannot convert int to string',
-                    'TypeError: sequence item 0: expected str instance, int found',
-                    'AttributeError: \'int\' object has no attribute \'join\'',
-                    'Prints: 1-2-3'
-                ],
-                correct: 1,
-                explanation: '<code>str.join()</code> strictly requires every element of the iterable to be an instance of <code>str</code>. It does NOT automatically coerce integers. You must pass <code>[str(x) for x in nums]</code>.'
+                explanation: "<code>strip(chars)</code> treats the argument as a <strong>set of individual characters</strong> to remove from both ends, NOT as a substring! From the right, it strips all 'a' and 'n' until reaching 'b'. Result is <code>'b'</code>."
             },
             {
                 id: 26,
-                topic: 'methods',
-                topicLabel: 'String Methods',
-                text: 'What happens when find() vs index() fails to locate a substring?',
-                code: 's = "GLA_UNIVERSITY"\na = s.find("XYZ")\n# b = s.index("XYZ")',
+                topic: "methods",
+                topicLabel: "String Methods",
+                text: "What is the crucial difference between split() with no arguments and split(\" \")?",
+                code: "s = \"  Python   is   cool  \"\nprint(len(s.split()), len(s.split(\" \")))",
                 options: [
-                    'Both return -1',
-                    'Both raise ValueError: substring not found',
-                    'find() returns -1; index() raises ValueError: substring not found',
-                    'find() returns None; index() returns -1'
+                    "3 3",
+                    "3 11",
+                    "3 7",
+                    "SyntaxError"
                 ],
-                correct: 2,
-                explanation: 'When the substring is absent, <code>find()</code> safely returns <code>-1</code>. In contrast, <code>index()</code> raises a <code>ValueError</code> exception. This is a core interview distinction.'
+                correct: 1,
+                explanation: "<code>s.split()</code> (sep=None) groups contiguous whitespace into single delimiters and discards leading/trailing whitespace, returning exactly 3 words. <code>s.split(\" \")</code> treats every single space as a delimiter, creating multiple empty string entries for consecutive spaces (total 11 items!)."
             },
             {
                 id: 27,
-                topic: 'methods',
-                topicLabel: 'String Methods',
-                text: 'What does count() return for overlapping patterns?',
-                code: 's = "banana"\nprint(s.count("ana"))',
+                topic: "methods",
+                topicLabel: "String Methods",
+                text: "What exception is raised when join() is called on a list of integers?",
+                code: "nums = [1, 2, 3]\nprint(\"-\".join(nums))",
                 options: [
-                    '2',
-                    '1',
-                    '0',
-                    '3'
+                    "ValueError: cannot convert int to string",
+                    "TypeError: sequence item 0: expected str instance, int found",
+                    "AttributeError: 'int' object has no attribute 'join'",
+                    "Prints: 1-2-3"
                 ],
                 correct: 1,
-                explanation: 'In Python, <code>str.count()</code> counts <strong>non-overlapping</strong> occurrences only. After matching the first "ana" at indices 1..3, scanning resumes at index 4, missing the overlapping second "ana". Output: <code>1</code>.'
+                explanation: "<code>str.join()</code> strictly requires every element of the iterable to be an instance of <code>str</code>. It does NOT automatically coerce integers. You must pass <code>[str(x) for x in nums]</code>."
             },
             {
                 id: 28,
-                topic: 'methods',
-                topicLabel: 'String Methods',
-                text: 'Which data structure can startswith() accept to test multiple prefixes at once?',
-                code: 's = "report_2026.pdf"\nprint(s.endswith((".pdf", ".docx", ".xlsx")))',
+                topic: "methods",
+                topicLabel: "String Methods",
+                text: "What happens when find() vs index() fails to locate a substring?",
+                code: "s = \"GLA_UNIVERSITY\"\na = s.find(\"XYZ\")\n# b = s.index(\"XYZ\")",
                 options: [
-                    'Only a single string',
-                    'A list: [\".pdf\", \".docx\"]',
-                    'A tuple: (\".pdf\", \".docx\", \".xlsx\")',
-                    'A set: {\".pdf\", \".docx\"}'
+                    "Both return -1",
+                    "Both raise ValueError: substring not found",
+                    "find() returns -1; index() raises ValueError: substring not found",
+                    "find() returns None; index() returns -1"
                 ],
                 correct: 2,
-                explanation: 'Both <code>startswith()</code> and <code>endswith()</code> accept a <strong>tuple</strong> of strings. If the string matches any element in the tuple, it returns True. (Passing a list raises TypeError!).'
+                explanation: "When the substring is absent, <code>find()</code> safely returns <code>-1</code>. In contrast, <code>index()</code> raises a <code>ValueError</code> exception. This is a core interview distinction."
             },
             {
                 id: 29,
-                topic: 'methods',
-                topicLabel: 'String Methods',
-                text: 'What does "12.34".isdigit() evaluate to?',
-                code: 'print("12.34".isdigit(), "-5".isdigit())',
+                topic: "methods",
+                topicLabel: "String Methods",
+                text: "What does count() return for overlapping patterns?",
+                code: "s = \"banana\"\nprint(s.count(\"ana\"))",
                 options: [
-                    'True True',
-                    'True False',
-                    'False False',
-                    'False True'
+                    "2",
+                    "1",
+                    "0",
+                    "3"
                 ],
-                correct: 2,
-                explanation: '<code>isdigit()</code> returns True ONLY if every single character in the string is a digit (0-9). The decimal point \'.\' and negative sign \'-\' are punctuation, causing both to return <code>False</code>.'
+                correct: 1,
+                explanation: "In Python, <code>str.count()</code> counts <strong>non-overlapping</strong> occurrences only. After matching the first \"ana\" at indices 1..3, scanning resumes at index 4, missing the overlapping second \"ana\". Output: <code>1</code>."
             },
             {
                 id: 30,
-                topic: 'methods',
-                topicLabel: 'String Methods',
-                text: 'What does str.partition() return if the separator is NOT found?',
-                code: 's = "hello_world"\nprint(s.partition("@"))',
+                topic: "methods",
+                topicLabel: "String Methods",
+                text: "Which data structure can startswith() accept to test multiple prefixes at once?",
+                code: "s = \"report_2026.pdf\"\nprint(s.endswith((\".pdf\", \".docx\", \".xlsx\")))",
+                options: [
+                    "Only a single string",
+                    "A list: [\".pdf\", \".docx\"]",
+                    "A tuple: (\".pdf\", \".docx\", \".xlsx\")",
+                    "A set: {\".pdf\", \".docx\"}"
+                ],
+                correct: 2,
+                explanation: "Both <code>startswith()</code> and <code>endswith()</code> accept a <strong>tuple</strong> of strings. If the string matches any element in the tuple, it returns True. (Passing a list raises TypeError!)."
+            },
+            {
+                id: 31,
+                topic: "methods",
+                topicLabel: "String Methods",
+                text: "What does \"12.34\".isdigit() evaluate to?",
+                code: "print(\"12.34\".isdigit(), \"-5\".isdigit())",
+                options: [
+                    "True True",
+                    "True False",
+                    "False False",
+                    "False True"
+                ],
+                correct: 2,
+                explanation: "<code>isdigit()</code> returns True ONLY if every single character in the string is a digit (0-9). The decimal point '.' and negative sign '-' are punctuation, causing both to return <code>False</code>."
+            },
+            {
+                id: 32,
+                topic: "methods",
+                topicLabel: "String Methods",
+                text: "What does str.partition() return if the separator is NOT found?",
+                code: "s = \"hello_world\"\nprint(s.partition(\"@\"))",
                 options: [
                     "('hello_world', '', '')",
                     "('', '', 'hello_world')",
@@ -1260,16 +1312,29 @@
                     "('hello_world',)"
                 ],
                 correct: 0,
-                explanation: '<code>partition(sep)</code> always returns a 3-tuple <code>(before, sep, after)</code>. If the separator is not found, it returns <code>(original_string, "", "")</code>. This makes it completely safe for tuple unpacking!'
+                explanation: "<code>partition(sep)</code> always returns a 3-tuple <code>(before, sep, after)</code>. If the separator is not found, it returns <code>(original_string, \"\", \"\")</code>. This makes it completely safe for tuple unpacking!"
             },
-
-            // TOPIC 5: OTHER METHODS & FORMATTING (Q31 - Q35)
             {
-                id: 31,
-                topic: 'formatting',
-                topicLabel: 'Advanced Methods & Formatting',
-                text: 'What does s.zfill(6) produce when the string starts with a negative sign?',
-                code: 'print("-42".zfill(6))',
+                id: 33,
+                topic: "methods",
+                topicLabel: "String Methods",
+                text: "What does s.replace() produce when passed an optional count parameter?",
+                code: "s = \"banana\"\nres = s.replace(\"a\", \"o\", 2)\nprint(res)",
+                options: [
+                    "'bonono'",
+                    "'bonona'",
+                    "'banana'",
+                    "TypeError: replace() takes at most 2 arguments"
+                ],
+                correct: 1,
+                explanation: "<code>str.replace(old, new[, count])</code> takes an optional <code>count</code> argument specifying the maximum number of occurrences to replace from left to right. Here, only the first two <code>'a'</code> characters (at indices 1 and 3) become <code>'o'</code>, while the third <code>'a'</code> (at index 5) remains untouched, producing <code>'bonona'</code>."
+            },
+            {
+                id: 34,
+                topic: "formatting",
+                topicLabel: "Advanced Methods & Formatting",
+                text: "What does s.zfill(6) produce when the string starts with a negative sign?",
+                code: "print(\"-42\".zfill(6))",
                 options: [
                     "'000-42'",
                     "'-00042'",
@@ -1277,29 +1342,29 @@
                     "ValueError"
                 ],
                 correct: 1,
-                explanation: '<code>zfill(width)</code> is sign-aware. It preserves the leading <code>+</code> or <code>-</code> sign at index 0 and inserts the padding zeros between the sign and the first digit, yielding <code>\'-00042\'</code>.'
+                explanation: "<code>zfill(width)</code> is sign-aware. It preserves the leading <code>+</code> or <code>-</code> sign at index 0 and inserts the padding zeros between the sign and the first digit, yielding <code>'-00042'</code>."
             },
             {
-                id: 32,
-                topic: 'formatting',
-                topicLabel: 'Advanced Methods & Formatting',
-                text: 'What is the output of evaluating "".isspace() and "   \\n\\t".isspace()?',
-                code: 'print("".isspace(), "   \\n\\t".isspace())',
+                id: 35,
+                topic: "formatting",
+                topicLabel: "Advanced Methods & Formatting",
+                text: "What is the output of evaluating \"\".isspace() and \"   \\n\\t\".isspace()?",
+                code: "print(\"\".isspace(), \"   \\n\\t\".isspace())",
                 options: [
-                    'True True',
-                    'False True',
-                    'False False',
-                    'True False'
+                    "True True",
+                    "False True",
+                    "False False",
+                    "True False"
                 ],
                 correct: 1,
-                explanation: 'All <code>is...()</code> methods (including <code>isspace()</code>, <code>isalpha()</code>, <code>isdigit()</code>) return <code>False</code> on empty strings because there are no characters satisfying the condition.'
+                explanation: "All <code>is...()</code> methods (including <code>isspace()</code>, <code>isalpha()</code>, <code>isdigit()</code>) return <code>False</code> on empty strings because there are no characters satisfying the condition."
             },
             {
-                id: 33,
-                topic: 'formatting',
-                topicLabel: 'Advanced Methods & Formatting',
-                text: 'What does the F-string specifier f"{1000000:,}" format to?',
-                code: 'num = 1000000\nprint(f"{num:,}")',
+                id: 36,
+                topic: "formatting",
+                topicLabel: "Advanced Methods & Formatting",
+                text: "What does the F-string specifier f\"{1000000:,}\" format to?",
+                code: "num = 1000000\nprint(f\"{num:,}\")",
                 options: [
                     "'1,000,000'",
                     "'1000000,'",
@@ -1307,14 +1372,14 @@
                     "SyntaxError"
                 ],
                 correct: 0,
-                explanation: 'The <code>,</code> format specifier automatically inserts comma thousands-separators, outputting <code>\'1,000,000\'</code>.'
+                explanation: "The <code>,</code> format specifier automatically inserts comma thousands-separators, outputting <code>'1,000,000'</code>."
             },
             {
-                id: 34,
-                topic: 'formatting',
-                topicLabel: 'Advanced Methods & Formatting',
-                text: 'What is the output of Python 3.8+ f-string debug syntax f"{x=}"?',
-                code: 'x = 25\nprint(f"{x=}")',
+                id: 37,
+                topic: "formatting",
+                topicLabel: "Advanced Methods & Formatting",
+                text: "What is the output of Python 3.8+ f-string debug syntax f\"{x=}\"?",
+                code: "x = 25\nprint(f\"{x=}\")",
                 options: [
                     "'25'",
                     "'x=25'",
@@ -1322,14 +1387,14 @@
                     "SyntaxError"
                 ],
                 correct: 1,
-                explanation: 'Python 3.8 introduced the <code>=</code> specifier for f-strings. <code>f"{x=}"</code> prints both the expression text and its evaluated value, outputting <code>\'x=25\'</code>.'
+                explanation: "Python 3.8 introduced the <code>=</code> specifier for f-strings. <code>f\"{x=}\"</code> prints both the expression text and its evaluated value, outputting <code>'x=25'</code>."
             },
             {
-                id: 35,
-                topic: 'formatting',
-                topicLabel: 'Advanced Methods & Formatting',
-                text: 'What does f"{\'GLA\':^9}" produce?',
-                code: 'print(repr(f"{\'GLA\':^9}"))',
+                id: 38,
+                topic: "formatting",
+                topicLabel: "Advanced Methods & Formatting",
+                text: "What does f\"{'GLA':^9}\" produce?",
+                code: "print(repr(f\"{'GLA':^9}\"))",
                 options: [
                     "'GLA      '",
                     "'      GLA'",
@@ -1337,7 +1402,37 @@
                     "'^^^GLA^^^'"
                 ],
                 correct: 2,
-                explanation: 'The <code>^</code> specifier specifies <strong>center alignment</strong> within the given field width. 9 - 3 = 6 padding spaces, split equally into 3 spaces on each side: <code>\'   GLA   \'</code>.'
+                explanation: "The <code>^</code> specifier specifies <strong>center alignment</strong> within the given field width. 9 - 3 = 6 padding spaces, split equally into 3 spaces on each side: <code>'   GLA   '</code>."
+            },
+            {
+                id: 39,
+                topic: "formatting",
+                topicLabel: "Advanced Methods & Formatting",
+                text: "What does the string method s.center(width, fillchar) produce?",
+                code: "s = \"GLA\"\nprint(s.center(9, \"*\"))",
+                options: [
+                    "'***GLA***'",
+                    "'*GLA*****'",
+                    "'*****GLA*'",
+                    "'GLA******'"
+                ],
+                correct: 0,
+                explanation: "<code>str.center(width, fillchar)</code> centers the string within a field of the specified width using the provided fill character. For width 9 and <code>\"GLA\"</code> (length 3), 6 asterisks are split symmetrically with 3 on each side: <code>'***GLA***'</code>."
+            },
+            {
+                id: 40,
+                topic: "formatting",
+                topicLabel: "Advanced Methods & Formatting",
+                text: "What is the output of combining alignment, fill characters, and float precision in an f-string?",
+                code: "score = 9.5\nprint(repr(f\"{score:*>8.2f}\"))",
+                options: [
+                    "'****9.50'",
+                    "'9.50****'",
+                    "'***9.500'",
+                    "'00009.50'"
+                ],
+                correct: 0,
+                explanation: "The format specifier <code>:*>8.2f</code> breaks down as: <code>.2f</code> rounds and formats 9.5 to <code>'9.50'</code> (4 characters). <code>&gt;</code> specifies right-alignment within width 8. <code>*</code> is the fill character padding the remaining 4 spaces on the left: <code>'****9.50'</code>."
             }
         ];
 
@@ -1348,7 +1443,7 @@
         let userAnswers = {};
         let flaggedQuestions = new Set();
         let examMode = 'practice'; // 'practice' or 'exam'
-        let timerSeconds = 35 * 60;
+        let timerSeconds = 40 * 60;
         let timerInterval = null;
 
         function initApp() {
@@ -1454,16 +1549,16 @@
             document.querySelectorAll('.palette-cell').forEach(c => c.classList.remove('current'));
             const curCell = document.getElementById(`palette-${actualIdx}`);
             if (curCell) curCell.classList.add('current');
-            document.getElementById('paletteCount').textContent = `${actualIdx + 1}/35`;
+            document.getElementById('paletteCount').textContent = `${actualIdx + 1}/${QUESTIONS.length}`;
         }
 
         function loadQuestion() {
             const actualIdx = filteredIndices[currentFilteredIndex];
             const q = QUESTIONS[actualIdx];
 
-            document.getElementById('qNumberPill').textContent = `Q${q.id} of 35`;
+            document.getElementById('qNumberPill').textContent = `Q${q.id} of ${QUESTIONS.length}`;
             document.getElementById('qTopicTag').textContent = q.topicLabel;
-            document.getElementById('qText').textContent = q.text;
+            document.getElementById('qText').innerHTML = q.text;
 
             const codeBox = document.getElementById('qCode');
             if (q.code) {
@@ -1473,67 +1568,78 @@
                 codeBox.style.display = 'none';
             }
 
+            const flagBtn = document.getElementById('qFlagBtn');
             const isFlagged = flaggedQuestions.has(actualIdx);
-            document.getElementById('qFlagBtn').classList.toggle('flagged', isFlagged);
-            document.getElementById('flagBtnText').textContent = isFlagged ? 'Flagged' : 'Bookmark';
+            flagBtn.classList.toggle('flagged', isFlagged);
+            document.getElementById('flagBtnText').textContent = isFlagged ? 'Bookmarked' : 'Bookmark';
 
-            // Render Options
+            // Options
             const container = document.getElementById('optionsContainer');
             container.innerHTML = '';
-            const userChoice = userAnswers[actualIdx];
-            const hasAnswered = userChoice !== undefined;
+            const letters = ['A', 'B', 'C', 'D'];
+
+            const hasAnswered = userAnswers[actualIdx] !== undefined;
 
             q.options.forEach((optText, optIdx) => {
-                const optItem = document.createElement('div');
-                optItem.className = 'option-item';
-                const letters = ['A', 'B', 'C', 'D'];
+                const item = document.createElement('div');
+                item.className = 'option-item';
 
                 if (hasAnswered) {
+                    const userOpt = userAnswers[actualIdx];
                     if (examMode === 'practice') {
-                        if (optIdx === q.correct) optItem.classList.add('correct');
-                        else if (optIdx === userChoice) optItem.classList.add('incorrect');
-                        optItem.classList.add('disabled');
+                        if (optIdx === q.correct) item.classList.add('correct');
+                        else if (optIdx === userOpt) item.classList.add('incorrect');
+                        item.classList.add('disabled');
                     } else {
-                        if (optIdx === userChoice) optItem.classList.add('selected');
+                        if (optIdx === userOpt) item.classList.add('selected');
                     }
                 }
 
-                optItem.onclick = () => selectOption(actualIdx, optIdx);
+                item.onclick = () => selectOption(actualIdx, optIdx);
 
-                optItem.innerHTML = `
+                item.innerHTML = `
                     <div class="option-letter">${letters[optIdx]}</div>
-                    <div class="option-text">${optText}</div>
+                    <div class="option-text">${escapeHtml(optText)}</div>
                 `;
-                container.appendChild(optItem);
+                container.appendChild(item);
             });
 
-            // Explanation box
+            // Explanation Box
             const expBox = document.getElementById('explanationBox');
             if (hasAnswered && examMode === 'practice') {
-                expBox.classList.add('visible');
-                const isCorrect = userChoice === q.correct;
-                document.getElementById('expHeader').className = `explanation-header ${isCorrect ? 'correct' : 'incorrect'}`;
-                document.getElementById('expIcon').innerHTML = isCorrect ? '&check;' : '&cross;';
-                document.getElementById('expTitle').textContent = isCorrect ? 'Correct Answer! Excellent.' : 'Incorrect Option Selected.';
+                const isCorrect = userAnswers[actualIdx] === q.correct;
+                const header = document.getElementById('expHeader');
+                header.className = `explanation-header ${isCorrect ? 'correct' : 'incorrect'}`;
+                document.getElementById('expIcon').innerHTML = isCorrect ? '&#10004;' : '&#10008;';
+                document.getElementById('expTitle').textContent = isCorrect 
+                    ? 'Correct Solution Analysis' 
+                    : 'Pedagogical Analysis & Why This Failed';
                 document.getElementById('expBody').innerHTML = q.explanation;
+                expBox.classList.add('visible');
             } else {
                 expBox.classList.remove('visible');
             }
 
-            // Controls
+            // Navigation Buttons State
             document.getElementById('prevQBtn').disabled = currentFilteredIndex === 0;
-            document.getElementById('nextQBtn').textContent = 
-                currentFilteredIndex === filteredIndices.length - 1 ? 'Finish Review' : 'Next →';
+            const nextBtn = document.getElementById('nextQBtn');
+            if (currentFilteredIndex === filteredIndices.length - 1) {
+                nextBtn.textContent = 'Finish Quiz';
+            } else {
+                nextBtn.innerHTML = 'Next &rarr;';
+            }
 
             updatePaletteCurrent();
             updateStats();
         }
 
-        function selectOption(qIdx, optIdx) {
-            userAnswers[qIdx] = optIdx;
-            const q = QUESTIONS[qIdx];
+        function selectOption(actualIdx, optIdx) {
+            if (examMode === 'practice' && userAnswers[actualIdx] !== undefined) return;
 
-            const paletteCell = document.getElementById(`palette-${qIdx}`);
+            userAnswers[actualIdx] = optIdx;
+            const q = QUESTIONS[actualIdx];
+
+            const paletteCell = document.getElementById(`palette-${actualIdx}`);
             if (paletteCell) {
                 if (examMode === 'practice') {
                     paletteCell.className = `palette-cell current ${optIdx === q.correct ? 'correct' : 'incorrect'}`;
@@ -1591,7 +1697,7 @@
             }
             const acc = attemptedCount > 0 ? Math.round((correctCount / attemptedCount) * 100) : 0;
 
-            document.getElementById('statAttempted').textContent = `${attemptedCount}/35`;
+            document.getElementById('statAttempted').textContent = `${attemptedCount}/${QUESTIONS.length}`;
             document.getElementById('statScore').textContent = correctCount;
             document.getElementById('statAccuracy').textContent = `${acc}%`;
             document.getElementById('statFlagged').textContent = flaggedQuestions.size;
@@ -1606,8 +1712,8 @@
                 }
             }
             const incorrectCount = attemptedCount - correctCount;
-            const unanswered = 35 - attemptedCount;
-            const acc = 35 > 0 ? Math.round((correctCount / 35) * 100) : 0;
+            const unanswered = QUESTIONS.length - attemptedCount;
+            const acc = QUESTIONS.length > 0 ? Math.round((correctCount / QUESTIONS.length) * 100) : 0;
 
             document.getElementById('modalAccuracy').textContent = `${acc}%`;
             document.getElementById('modalCorrect').textContent = correctCount;
@@ -1631,10 +1737,20 @@
         function resetQuiz() {
             userAnswers = {};
             flaggedQuestions.clear();
+            timerSeconds = 40 * 60;
             closeScoreModal();
             filterByTopic('all', document.querySelectorAll('.filter-chip')[0]);
             renderQuestionPalette();
             loadQuestion();
+        }
+
+        function escapeHtml(str) {
+            return str
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
         }
 
         // KEYBOARD SHORTCUTS
