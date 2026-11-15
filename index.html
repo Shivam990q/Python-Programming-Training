@@ -253,6 +253,7 @@
     .card-mcq:hover::before { background: linear-gradient(90deg, #10b981, #06b6d4); }
     .card-colab:hover::before { background: linear-gradient(90deg, #f59e0b, #ef4444); }
     .card-curriculum:hover::before { background: linear-gradient(90deg, #38bdf8, #6366f1); }
+    .card-pptx:hover::before { background: linear-gradient(90deg, #2563eb, #38bdf8); }
 
     .card-header-icon {
       width: 52px;
@@ -274,6 +275,7 @@
     .icon-mcq { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
     .icon-colab { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
     .icon-curriculum { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
+    .icon-pptx { background: rgba(37, 99, 235, 0.15); color: #60a5fa; border: 1px solid rgba(37, 99, 235, 0.3); }
 
     .card-title {
       font-size: 1.25rem;
@@ -335,6 +337,8 @@
 
     .btn-curriculum { background: rgba(255, 255, 255, 0.08); color: #ffffff; border: 1px solid var(--card-border); }
     .btn-curriculum:hover { background: rgba(255, 255, 255, 0.15); }
+    .btn-pptx { background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #ffffff; font-weight: 700; }
+    .btn-pptx:hover { background: linear-gradient(135deg, #1d4ed8, #1e40af); box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4); }
 
     /* Topic Syllabus Highlights Table */
     .curriculum-preview {
@@ -440,6 +444,9 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
         GitHub Repository
       </a>
+      <a href="Python_Day1_Afternoon_Training.pptx" download="Python_Day1_Afternoon_Training.pptx" class="header-btn" style="background: rgba(37, 99, 235, 0.15); border-color: rgba(37, 99, 235, 0.3); color: #60a5fa;" title="Download Native Microsoft PowerPoint Deck (.pptx)">
+        📊 Download PPTX
+      </a>
       <a href="https://colab.research.google.com/github/Shivam990q/Python-Programming-Training/blob/main/Day1_Afternoon_List_Comprehensions_and_Strings.ipynb" target="_blank" class="header-btn" style="background: rgba(245, 158, 11, 0.15); border-color: rgba(245, 158, 11, 0.3); color: #fbbf24;">
         ⚡ Open in Colab
       </a>
@@ -478,6 +485,10 @@
         <div class="stat-pill">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
           10 Colab Coding Challenges
+        </div>
+        <div class="stat-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          PowerPoint Deck (.pptx)
         </div>
       </div>
     </div>
@@ -546,6 +557,22 @@
           <span class="feature-tag">Reference Notes</span>
         </div>
         <div class="card-btn btn-curriculum">View Trainer Guide</div>
+      </a>
+
+      <!-- Card 5: PowerPoint Slide Deck (.pptx) -->
+      <a href="Python_Day1_Afternoon_Training.pptx" download="Python_Day1_Afternoon_Training.pptx" class="action-card card-pptx">
+        <div class="card-header-icon icon-pptx">📊</div>
+        <h2 class="card-title">PowerPoint Master Deck <span>&darr;</span></h2>
+        <p class="card-desc">
+          Official 16:9 widescreen Microsoft PowerPoint (.pptx) deck for university classroom projection, faculty lectures, and offline study. Includes complete afternoon syllabus across 24 slides.
+        </p>
+        <div class="feature-tags">
+          <span class="feature-tag">16:9 Widescreen</span>
+          <span class="feature-tag">24 Slides</span>
+          <span class="feature-tag">Projector Light Theme</span>
+          <span class="feature-tag">Native .PPTX File</span>
+        </div>
+        <div class="card-btn btn-pptx">Download PowerPoint (.pptx)</div>
       </a>
     </div>
 

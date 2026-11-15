@@ -941,6 +941,626 @@
             letter-spacing: 0.05em;
             margin-bottom: 0.25rem;
         }
+    
+
+        /* Header Theme Toggle Button */
+        .btn-theme-toggle {
+            background: rgba(245, 158, 11, 0.15) !important;
+            border: 1px solid rgba(245, 158, 11, 0.4) !important;
+            color: #fbbf24 !important;
+            font-weight: 700 !important;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .btn-theme-toggle:hover {
+            background: rgba(245, 158, 11, 0.25) !important;
+            border-color: #f59e0b !important;
+            color: #fef08a !important;
+        }
+
+        body.light-mode .btn-theme-toggle {
+            background: #EFF6FF !important;
+            border: 1px solid #93C5FD !important;
+            color: #1D4ED8 !important;
+        }
+
+        body.light-mode .btn-theme-toggle:hover {
+            background: #DBEAFE !important;
+            border-color: #3B82F6 !important;
+            color: #1E40AF !important;
+        }
+
+
+        /* ==========================================================================
+           PROJECTOR-READY LIGHT MODE THEME (GLA UNIVERSITY MASTERCLASS)
+           Engineered for maximum contrast, zero eye strain & classroom projector clarity
+           ========================================================================== */
+        
+        body.light-mode {
+            --bg-primary: #F8FAFC;
+            --bg-secondary: #FFFFFF;
+            --bg-card: #FFFFFF;
+            --bg-card-hover: #F1F5F9;
+            --border-color: #E2E8F0;
+            --text-main: #0F172A;
+            --text-muted: #475569;
+            --brand-blue: #2563EB;
+            --brand-blue-light: #1D4ED8;
+            --brand-gold: #D97706;
+            --brand-gold-light: #B45309;
+            --accent-green: #059669;
+            --accent-red: #DC2626;
+            --accent-purple: #7C3AED;
+            --accent-cyan: #0284C7;
+            --shadow-lg: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+        }
+
+        /* Header Navigation Light Mode */
+        body.light-mode header {
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid #E2E8F0;
+            box-shadow: 0 2px 8px -2px rgba(15, 23, 42, 0.06);
+        }
+
+        body.light-mode .logo-img {
+            border: 1px solid #E2E8F0;
+        }
+
+        body.light-mode .brand-text h1 {
+            color: #0F172A;
+        }
+
+        body.light-mode .brand-text h1 span {
+            color: #D97706;
+        }
+
+        body.light-mode .brand-text p {
+            color: #64748B;
+        }
+
+        body.light-mode .nav-tabs {
+            background: #F1F5F9;
+            border: 1px solid #E2E8F0;
+        }
+
+        body.light-mode .nav-btn {
+            color: #64748B;
+        }
+
+        body.light-mode .nav-btn:hover {
+            color: #0F172A;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        body.light-mode .nav-btn.active {
+            background: #FFFFFF;
+            color: #2563EB;
+            box-shadow: 0 1px 3px rgba(15, 23, 42, 0.1);
+        }
+
+        body.light-mode .badge-gla {
+            background: linear-gradient(135deg, #2563EB, #1D4ED8);
+            color: #FFFFFF;
+            box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
+        }
+
+        body.light-mode .btn-ctrl {
+            background: #F1F5F9;
+            color: #0F172A;
+            border: 1px solid #CBD5E1;
+        }
+
+        body.light-mode .btn-ctrl:hover {
+            background: #E2E8F0;
+            border-color: #94A3B8;
+        }
+
+        /* Presentation Slide Deck Light Mode */
+        body.light-mode .slide-stage {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08);
+        }
+
+        body.light-mode .slide {
+            background: #FFFFFF;
+            color: #334155;
+        }
+
+        body.light-mode .slide-header {
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        body.light-mode .slide-category {
+            color: #2563EB;
+            font-weight: 800;
+        }
+
+        body.light-mode .slide-title {
+            color: #0F172A;
+        }
+
+        body.light-mode .slide-index-badge {
+            background: #F1F5F9;
+            color: #475569;
+            border: 1px solid #E2E8F0;
+            font-weight: 700;
+        }
+
+        body.light-mode .slide-body {
+            color: #334155;
+        }
+
+        body.light-mode .slide-body p {
+            color: #334155;
+        }
+
+        body.light-mode .slide-body strong {
+            color: #0F172A;
+        }
+
+        body.light-mode .deck-controls {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+        }
+
+        body.light-mode #slideCounter {
+            color: #0F172A !important;
+            font-weight: 700;
+        }
+
+        body.light-mode .deck-progress-bar {
+            background: #E2E8F0;
+        }
+
+        body.light-mode .deck-progress-fill {
+            background: linear-gradient(90deg, #2563EB, #059669);
+        }
+
+        /* Slide Cards & Information Boxes */
+        body.light-mode .info-card {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 2px 4px rgba(15, 23, 42, 0.04);
+        }
+
+        body.light-mode .info-card h4 {
+            color: #2563EB;
+            font-weight: 700;
+        }
+
+        body.light-mode .info-card ul,
+        body.light-mode .info-card li,
+        body.light-mode .info-card p {
+            color: #334155 !important;
+        }
+
+        body.light-mode .info-card code {
+            background: #F1F5F9;
+            color: #0F172A;
+            border: 1px solid #E2E8F0;
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+
+        body.light-mode .tip-card {
+            background: #ECFDF5;
+            border: 1px solid #A7F3D0;
+            border-left: 4px solid #059669;
+            color: #065F46;
+        }
+
+        body.light-mode .tip-card h4 {
+            color: #047857;
+            font-weight: 800;
+        }
+
+        body.light-mode .tip-card p,
+        body.light-mode .tip-card li {
+            color: #064E3B !important;
+        }
+
+        body.light-mode .trap-card {
+            background: #FEF2F2;
+            border: 1px solid #FECACA;
+            border-left: 4px solid #DC2626;
+            color: #991B1B;
+        }
+
+        body.light-mode .trap-card h4 {
+            color: #B91C1C;
+            font-weight: 800;
+        }
+
+        body.light-mode .trap-card p,
+        body.light-mode .trap-card li {
+            color: #7F1D1D !important;
+        }
+
+        /* High-Contrast Projector Code Blocks */
+        body.light-mode .code-box {
+            background: #0F172A;
+            border: 1px solid #334155;
+            color: #F8FAFC;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
+        }
+
+        body.light-mode .code-box .keyword { color: #F43F5E; font-weight: 600; }
+        body.light-mode .code-box .string { color: #38BDF8; }
+        body.light-mode .code-box .func { color: #C084FC; font-weight: 600; }
+        body.light-mode .code-box .comment { color: #94A3B8; font-style: italic; }
+        body.light-mode .code-box .number { color: #67E8F9; }
+        body.light-mode .code-box .output { 
+            color: #4ADE80; 
+            border-top: 1px dashed #334155; 
+        }
+
+        /* Tables & Comparison Grids */
+        body.light-mode table {
+            border-color: #E2E8F0 !important;
+        }
+
+        body.light-mode th {
+            background: #F1F5F9 !important;
+            color: #0F172A !important;
+            border-bottom: 2px solid #CBD5E1 !important;
+        }
+
+        body.light-mode td {
+            border-bottom: 1px solid #E2E8F0 !important;
+            color: #334155 !important;
+        }
+
+        body.light-mode tr:hover td {
+            background: #F8FAFC !important;
+        }
+
+        /* Common Form Inputs */
+        body.light-mode .text-input,
+        body.light-mode .num-input,
+        body.light-mode select.text-input {
+            background: #FFFFFF;
+            border: 1px solid #CBD5E1;
+            color: #0F172A;
+        }
+
+        body.light-mode .text-input:focus,
+        body.light-mode .num-input:focus,
+        body.light-mode select.text-input:focus {
+            border-color: #2563EB;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+
+        body.light-mode .input-group label {
+            color: #475569;
+        }
+
+        /* --------------------------------------------------------------------------
+           LAB 1: INTERACTIVE SLICING SANDBOX / RULER
+           -------------------------------------------------------------------------- */
+        body.light-mode .slice-controls {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+        }
+
+        body.light-mode .slice-visual-display {
+            background: #F8FAFC;
+            border: 1px solid #CBD5E1;
+            box-shadow: inset 0 2px 4px rgba(15, 23, 42, 0.03);
+        }
+
+        body.light-mode .char-node {
+            background: #FFFFFF;
+            border: 2px solid #CBD5E1;
+            box-shadow: 0 2px 4px rgba(15, 23, 42, 0.05);
+        }
+
+        body.light-mode .char-node .pos-idx {
+            color: #059669;
+            font-weight: 700;
+        }
+
+        body.light-mode .char-node .char-val {
+            color: #0F172A;
+            font-weight: 800;
+        }
+
+        body.light-mode .char-node .neg-idx {
+            color: #D97706;
+            font-weight: 700;
+        }
+
+        body.light-mode .char-node.selected {
+            background: #EFF6FF;
+            border-color: #2563EB;
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25), 0 4px 8px rgba(37, 99, 235, 0.15);
+        }
+
+        body.light-mode .char-node.selected .char-val {
+            color: #1D4ED8;
+        }
+
+        body.light-mode .slice-result-card {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+        }
+
+        body.light-mode .slice-code-preview {
+            color: #0F172A;
+        }
+
+        body.light-mode .slice-code-preview .keyword { color: #DC2626; }
+        body.light-mode .slice-code-preview .expr { color: #2563EB; font-weight: 800; }
+        body.light-mode .slice-code-preview .res { color: #059669; font-weight: 800; }
+
+        /* --------------------------------------------------------------------------
+           LAB 2: LIST COMPREHENSION SIMULATOR
+           -------------------------------------------------------------------------- */
+        body.light-mode .comp-sim-grid .info-card {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+        }
+
+        body.light-mode .pipeline-step {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+        }
+
+        body.light-mode .pipeline-step.active-step {
+            background: #EFF6FF;
+            border-color: #2563EB;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12);
+        }
+
+        body.light-mode .step-num {
+            background: #2563EB;
+            color: #FFFFFF;
+        }
+
+        body.light-mode .item-pill {
+            background: #F1F5F9;
+            border: 1px solid #CBD5E1;
+            color: #0F172A;
+        }
+
+        body.light-mode .item-pill.pass {
+            border-color: #059669;
+            color: #065F46;
+            background: #ECFDF5;
+            font-weight: 600;
+        }
+
+        body.light-mode .item-pill.reject {
+            border-color: #DC2626;
+            color: #991B1B;
+            background: #FEF2F2;
+        }
+
+        /* --------------------------------------------------------------------------
+           LAB 3: STRING MEMORY VISUALIZER
+           -------------------------------------------------------------------------- */
+        body.light-mode .var-stack {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+        }
+
+        body.light-mode .heap-memory {
+            background: #F8FAFC;
+            border: 1px solid #CBD5E1;
+        }
+
+        body.light-mode .heap-cell {
+            background: #FFFFFF;
+            border: 2px solid #CBD5E1;
+            box-shadow: 0 2px 4px rgba(15, 23, 42, 0.05);
+        }
+
+        body.light-mode .heap-cell .address {
+            color: #64748B;
+            font-weight: 600;
+        }
+
+        body.light-mode .heap-cell .content {
+            color: #0F172A;
+            font-weight: 800;
+        }
+
+        body.light-mode .heap-cell.highlight {
+            border-color: #059669;
+            background: #ECFDF5;
+            box-shadow: 0 0 15px rgba(5, 150, 105, 0.25);
+        }
+
+        body.light-mode .heap-cell.highlight .content {
+            color: #065F46;
+        }
+
+        /* --------------------------------------------------------------------------
+           LAB 4: 23 STRING METHODS EXPLORER
+           -------------------------------------------------------------------------- */
+        body.light-mode .search-bar {
+            background: #FFFFFF;
+            border: 1px solid #CBD5E1;
+            color: #0F172A;
+        }
+
+        body.light-mode .search-bar::placeholder {
+            color: #94A3B8;
+        }
+
+        body.light-mode .tag-btn {
+            background: #F1F5F9;
+            color: #475569;
+            border: 1px solid #CBD5E1;
+        }
+
+        body.light-mode .tag-btn:hover {
+            background: #E2E8F0;
+            color: #0F172A;
+        }
+
+        body.light-mode .tag-btn.active {
+            background: #2563EB;
+            color: #FFFFFF;
+            border-color: #2563EB;
+            box-shadow: 0 2px 4px rgba(37, 99, 235, 0.25);
+        }
+
+        body.light-mode .method-card {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+        }
+
+        body.light-mode .method-card:hover,
+        body.light-mode .method-card.active {
+            background: #EFF6FF;
+            border-color: #2563EB;
+            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.12);
+        }
+
+        body.light-mode .method-card .name {
+            color: #1D4ED8;
+            font-weight: 800;
+        }
+
+        body.light-mode .method-card .category-pill {
+            background: #F1F5F9;
+            color: #2563EB;
+            border: 1px solid #E2E8F0;
+            font-weight: 600;
+        }
+
+        body.light-mode .method-card .desc {
+            color: #475569;
+        }
+
+        body.light-mode .method-tester-box {
+            background: #FFFFFF;
+            border: 1px solid #CBD5E1;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+        }
+
+        /* --------------------------------------------------------------------------
+           LAB 5: F-STRING FORMATTER STUDIO
+           -------------------------------------------------------------------------- */
+        body.light-mode #fstring-lab .info-card {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+        }
+
+        /* Modal Overview & Notes Drawer */
+        body.light-mode .modal-overlay {
+            background: rgba(15, 23, 42, 0.55);
+        }
+
+        body.light-mode .modal-window {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            color: #0F172A;
+            box-shadow: 0 20px 30px -10px rgba(15, 23, 42, 0.2);
+        }
+
+        body.light-mode .modal-header {
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        body.light-mode .modal-header h3 {
+            color: #0F172A;
+        }
+
+        body.light-mode .modal-close-btn {
+            color: #64748B;
+        }
+
+        body.light-mode .modal-close-btn:hover {
+            color: #0F172A;
+        }
+
+        body.light-mode .slide-thumb {
+            background: #F8FAFC;
+            border: 1px solid #CBD5E1;
+            color: #0F172A;
+        }
+
+        body.light-mode .slide-thumb:hover,
+        body.light-mode .slide-thumb.current {
+            background: #EFF6FF;
+            border-color: #2563EB;
+            box-shadow: 0 4px 8px rgba(37, 99, 235, 0.15);
+        }
+
+        body.light-mode .thumb-title {
+            color: #0F172A;
+        }
+
+        body.light-mode .thumb-cat {
+            color: #2563EB;
+        }
+
+        body.light-mode .notes-drawer {
+            background: #FFFFFF;
+            border-top: 1px solid #E2E8F0;
+            color: #334155;
+            box-shadow: 0 -4px 12px rgba(15, 23, 42, 0.05);
+        }
+
+        body.light-mode .notes-drawer strong {
+            color: #0F172A;
+        }
+
+        /* --------------------------------------------------------------------------
+           INLINE OVERRIDES & UNIVERSAL READABILITY
+           -------------------------------------------------------------------------- */
+        body.light-mode h1,
+        body.light-mode h2,
+        body.light-mode h3,
+        body.light-mode h4,
+        body.light-mode h5,
+        body.light-mode h6 {
+            color: #0F172A !important;
+        }
+
+        body.light-mode [style*="color: #fff"],
+        body.light-mode [style*="color:#fff"],
+        body.light-mode [style*="color: white"],
+        body.light-mode [style*="color: #cbd5e1"] {
+            color: #0F172A !important;
+        }
+
+        body.light-mode [style*="color: #94a3b8"],
+        body.light-mode [style*="color: #e5e7eb"] {
+            color: #334155 !important;
+        }
+
+        body.light-mode [style*="background: #0f172a"],
+        body.light-mode [style*="background:#0f172a"] {
+            background: #F1F5F9 !important;
+            border-color: #CBD5E1 !important;
+        }
+
+        body.light-mode [style*="background: #1e293b"],
+        body.light-mode [style*="background:#1e293b"] {
+            background: #E2E8F0 !important;
+            color: #0F172A !important;
+        }
+
+        body.light-mode tr[style*="background: #1e293b"] {
+            background: #F1F5F9 !important;
+            color: #0F172A !important;
+        }
+
+        body.light-mode tr[style*="background: #0f172a"] {
+            background: #F8FAFC !important;
+        }
+
     </style>
 </head>
 <body>
@@ -967,6 +1587,9 @@
         </div>
 
         <div class="header-actions">
+            <button class="btn-ctrl btn-theme-toggle" id="themeToggleBtn" onclick="toggleTheme()" title="Toggle Projector-Ready Light Mode (T)">
+                <span id="themeBtnIcon">☀️</span> <span id="themeBtnText">Light Mode [T]</span>
+            </button>
             <span class="badge-gla">GLA Day 1</span>
             <button class="btn-ctrl" onclick="toggleNotes()" title="Toggle Speaker/Trainer Notes (N)">Notes [N]</button>
             <button class="btn-ctrl" onclick="toggleFullscreen()" title="Toggle Fullscreen (F)">Fullscreen [F]</button>
@@ -2506,6 +3129,8 @@ res = <span class="string">f"Hi {name.upper()}, CGPA: {cgpa:.2f}"</span>
                 nextSlide();
             } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
                 prevSlide();
+            } else if (e.key.toLowerCase() === 't') {
+                toggleTheme();
             } else if (e.key.toLowerCase() === 'n') {
                 toggleNotes();
             } else if (e.key.toLowerCase() === 'f') {
@@ -2895,8 +3520,39 @@ res = <span class="string">f"Hi {name.upper()}, CGPA: {cgpa:.2f}"</span>
             document.getElementById('fstrOutputResult').textContent = `'${out}'`;
         }
 
+
+        // ==========================================
+        // THEME TOGGLE (LIGHT / DARK PROJECTOR MODE)
+        // ==========================================
+        function toggleTheme() {
+            const isLight = document.body.classList.toggle('light-mode');
+            const icon = document.getElementById('themeBtnIcon');
+            const text = document.getElementById('themeBtnText');
+            if (isLight) {
+                if (icon) icon.textContent = '🌙';
+                if (text) text.textContent = 'Dark Mode [T]';
+                localStorage.setItem('gla_presentation_theme', 'light');
+            } else {
+                if (icon) icon.textContent = '☀️';
+                if (text) text.textContent = 'Light Mode [T]';
+                localStorage.setItem('gla_presentation_theme', 'dark');
+            }
+        }
+
+        function initTheme() {
+            const savedTheme = localStorage.getItem('gla_presentation_theme');
+            if (savedTheme === 'light') {
+                document.body.classList.add('light-mode');
+                const icon = document.getElementById('themeBtnIcon');
+                const text = document.getElementById('themeBtnText');
+                if (icon) icon.textContent = '🌙';
+                if (text) text.textContent = 'Dark Mode [T]';
+            }
+        }
+
         // INITIALIZATION
         window.addEventListener('DOMContentLoaded', () => {
+            initTheme();
             updateSlideUI();
             loadMethodsGrid();
             selectMethod(selectedMethod);
