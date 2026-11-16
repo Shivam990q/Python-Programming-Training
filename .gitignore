@@ -1,6 +1,7 @@
-.ipynb_checkpoints/
+# Temporary execution artifacts
+loop_state.json
+scratch/
+*.log
+*.tmp
 __pycache__/
-*.py[cod]
-*$py.class
-.DS_Store
-Thumbs.db
+.pytest_cache/

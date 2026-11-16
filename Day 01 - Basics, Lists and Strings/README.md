@@ -2,7 +2,7 @@
 ## **Day 1: Python Basics, Lists and Strings &mdash; Afternoon Session (3 Hours)**
 ### **Curriculum: List Comprehensions, Companion Built-ins, Strings Deep Dive, 23 Methods & Modern Formatting**
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Shivam990q/Python-Programming-Training/blob/main/Day1_Afternoon_List_Comprehensions_and_Strings.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Shivam990q/Python-Programming-Training/blob/main/Day%2001%20-%20Basics%2C%20Lists%20and%20Strings/Day1_Afternoon_List_Comprehensions_and_Strings.ipynb)
 [![Live Web Portal](https://img.shields.io/badge/Live%20Web%20Portal-Interactive%20Slides%20%26%20MCQs-brightgreen.svg?style=for-the-badge)](https://shivam990q.github.io/Python-Programming-Training/)
 [![Training Partner: Edulateral Foundation](https://img.shields.io/badge/Partner-Edulateral%20Foundation-blue.svg?style=for-the-badge)](https://edulateral.com)
 [![Institution: GLA University](https://img.shields.io/badge/Institution-GLA%20University-orange.svg?style=for-the-badge)](https://www.gla.ac.in)
