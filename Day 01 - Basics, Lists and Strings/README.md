@@ -2,7 +2,7 @@
 ## **Day 1: Python Basics, Lists and Strings &mdash; Afternoon Session (3 Hours)**
 ### **Curriculum: List Comprehensions, Companion Built-ins, Strings Deep Dive, 23 Methods & Modern Formatting**
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Shivam990q/Python-Programming-Training/blob/main/Day%2001%20-%20Basics%2C%20Lists%20and%20Strings/Day1_Afternoon_List_Comprehensions_and_Strings.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Shivam990q/Python-Programming-Training/blob/main/Day%2001%20-%20Basics%2C%20Lists%20and%20Strings/Day1_Basics_Lists_and_Strings.ipynb)
 [![Live Web Portal](https://img.shields.io/badge/Live%20Web%20Portal-Interactive%20Slides%20%26%20MCQs-brightgreen.svg?style=for-the-badge)](https://shivam990q.github.io/Python-Programming-Training/)
 [![Training Partner: Edulateral Foundation](https://img.shields.io/badge/Partner-Edulateral%20Foundation-blue.svg?style=for-the-badge)](https://edulateral.com)
 [![Institution: GLA University](https://img.shields.io/badge/Institution-GLA%20University-orange.svg?style=for-the-badge)](https://www.gla.ac.in)
@@ -17,7 +17,7 @@ Python Programming Training/
 ├── index.html                      # Interactive Course Portal & Launchpad (GitHub Pages)
 ├── presentation_visuals.html       # Visual Presentation Deck (24 slides) + 5 Interactive Visual Labs
 ├── interactive_mcq_quiz.html       # 35 Placement-Grade MCQs with instant feedback & analytics
-├── Day1_Afternoon_List_Comprehensions_and_Strings.ipynb  # Complete Google Colab Jupyter Notebook
+├── Day1_Basics_Lists_and_Strings.ipynb  # Complete Google Colab Jupyter Notebook
 ├── assets/
 │   ├── edulateral_logo.jpg         # Official Edulateral Foundation branding asset
 │   └── logo_b64.txt                # High-density Base64 URI for self-contained portability
@@ -114,15 +114,15 @@ Python Programming Training/
   - **Topic Filters:** Filter dynamically by *List Comprehensions*, *Built-in Utilities*, *Strings & Slicing*, *String Methods*, or *Formatting & Traps*.
   - **Bookmark:** Flag questions for later review.
 
-### 3. Google Colab Notebook (`Day1_Afternoon_List_Comprehensions_and_Strings.ipynb`)
+### 3. Google Colab Notebook (`Day1_Basics_Lists_and_Strings.ipynb`)
 - **Option A (Google Colab):**
   1. Go to [Google Colab](https://colab.research.google.com).
-  2. Click **Upload** -> Select `Day1_Afternoon_List_Comprehensions_and_Strings.ipynb`.
+  2. Click **Upload** -> Select `Day1_Basics_Lists_and_Strings.ipynb`.
   3. Run the cells step-by-step from top to bottom.
 - **Option B (Local Jupyter Lab / VS Code):**
   ```bash
   pip install jupyter
-  jupyter lab Day1_Afternoon_List_Comprehensions_and_Strings.ipynb
+  jupyter lab Day1_Basics_Lists_and_Strings.ipynb
   ```
 - Contains complete runnable demonstrations for every topic and **10 automated unit-tested coding challenges**!
 

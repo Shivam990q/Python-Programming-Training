@@ -2,7 +2,7 @@
 ## **Day 2: Tuples, Sets, Dictionaries & Functions — Afternoon Session (3 Hours)**
 ### **Curriculum: Functions Anatomy, Arguments, LEGB Scope Hierarchy, Closures & Functional Programming (Lambda, Map, Filter, Reduce)**
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Shivam990q/Python-Programming-Training/blob/main/Day%2002%20-%20Tuples%2C%20Sets%2C%20Dictionaries%20and%20Functions/Day2_Afternoon_Functions_Scope_and_Functional_Programming.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Shivam990q/Python-Programming-Training/blob/main/Day%2002%20-%20Tuples%2C%20Sets%2C%20Dictionaries%20and%20Functions/Day2_Tuples_Sets_Dictionaries_and_Functions.ipynb)
 [![Training Partner: Edulateral Foundation](https://img.shields.io/badge/Partner-Edulateral%20Foundation-blue.svg?style=for-the-badge)](https://edulateral.com)
 [![Institution: GLA University](https://img.shields.io/badge/Institution-GLA%20University-orange.svg?style=for-the-badge)](https://www.gla.ac.in)
 
@@ -12,7 +12,7 @@
 ```text
 Day 02 - Tuples, Sets, Dictionaries and Functions/
 │
-├── Day2_Afternoon_Functions_Scope_and_Functional_Programming.ipynb # Master Google Colab Notebook (22 cells, 10 challenges)
+├── Day2_Tuples_Sets_Dictionaries_and_Functions.ipynb # Master Google Colab Notebook (22 cells, 10 challenges)
 ├── presentation_visuals.html                                       # 5 Interactive Visual Simulation Labs (100% Light Mode)
 ├── interactive_mcq_quiz.html                                       # 40 Placement MCQs Exam Engine with Timer & Feedback
 ├── Python_Day2_Afternoon_Training.pptx                             # 24-Slide 16:9 Light-Themed Executive PowerPoint Deck

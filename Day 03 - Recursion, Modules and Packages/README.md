@@ -2,7 +2,7 @@
 ## **Day 3: Recursion, Modules and Packages — Afternoon Session (3 Hours)**
 ### **Curriculum: Inbuilt Functions, Module Architecture, math (12), time (8), os (12), random, datetime & NumPy Foundations**
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Shivam990q/Python-Programming-Training/blob/main/Day%2003%20-%20Recursion%2C%20Modules%20and%20Packages/Day3_Afternoon_Builtins_Modules_and_Scientific_Python.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Shivam990q/Python-Programming-Training/blob/main/Day%2003%20-%20Recursion%2C%20Modules%20and%20Packages/Day3_Recursion_Modules_and_Packages.ipynb)
 [![Training Partner: Edulateral Foundation](https://img.shields.io/badge/Partner-Edulateral%20Foundation-blue.svg?style=for-the-badge)](https://edulateral.com)
 [![Institution: GLA University](https://img.shields.io/badge/Institution-GLA%20University-orange.svg?style=for-the-badge)](https://www.gla.ac.in)
 
@@ -12,7 +12,7 @@
 ```text
 Day 03 - Recursion, Modules and Packages/
 │
-├── Day3_Afternoon_Builtins_Modules_and_Scientific_Python.ipynb # Master Google Colab Notebook (22 cells, 10 challenges)
+├── Day3_Recursion_Modules_and_Packages.ipynb # Master Google Colab Notebook (22 cells, 10 challenges)
 ├── presentation_visuals.html                                   # 5 Interactive Visual Simulation Labs (100% Light Mode)
 ├── interactive_mcq_quiz.html                                   # 40 Placement MCQs Exam Engine with Timer & Feedback
 ├── Python_Day3_Afternoon_Training.pptx                         # 24-Slide 16:9 Light-Themed Executive PowerPoint Deck

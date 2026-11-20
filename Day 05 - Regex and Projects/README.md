@@ -2,7 +2,7 @@
 ## **Day 5: Regex and Projects — Afternoon Session (3 Hours)**
 ### **Curriculum: 6 Capstone Placement Projects Hands-on Implementation**
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Shivam990q/Python-Programming-Training/blob/main/Day%2005%20-%20Regex%20and%20Projects/Day5_Afternoon_Capstone_Placement_Projects.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Shivam990q/Python-Programming-Training/blob/main/Day%2005%20-%20Regex%20and%20Projects/Day5_Regex_and_Capstone_Projects.ipynb)
 [![Training Partner: Edulateral Foundation](https://img.shields.io/badge/Partner-Edulateral%20Foundation-blue.svg?style=for-the-badge)](https://edulateral.com)
 [![Institution: GLA University](https://img.shields.io/badge/Institution-GLA%20University-orange.svg?style=for-the-badge)](https://www.gla.ac.in)
 
@@ -12,7 +12,7 @@
 ```text
 Day 05 - Regex and Projects/
 │
-├── Day5_Afternoon_Capstone_Placement_Projects.ipynb # Master Google Colab Notebook (25 cells, 6 complete projects)
+├── Day5_Regex_and_Capstone_Projects.ipynb # Master Google Colab Notebook (25 cells, 6 complete projects)
 ├── presentation_visuals.html                        # 6 Interactive Capstone Project Simulators (100% Light Mode)
 ├── interactive_mcq_quiz.html                        # 40 Placement Architecture MCQs with Timer & Feedback
 ├── Python_Day5_Afternoon_Training.pptx              # 24-Slide 16:9 Light-Themed Executive PowerPoint Deck

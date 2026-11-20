@@ -2,7 +2,7 @@
 ## **Day 4: Exceptions and File Handling — Afternoon Session (3 Hours)**
 ### **Curriculum: open(), Context Managers, 8 File Modes (r, w, a, r+, rb, wb), 10 Methods (seek, tell, truncate) & CSV/Binary Persistence**
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Shivam990q/Python-Programming-Training/blob/main/Day%2004%20-%20Exceptions%20and%20File%20Handling/Day4_Afternoon_File_Handling_and_Persistence.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Shivam990q/Python-Programming-Training/blob/main/Day%2004%20-%20Exceptions%20and%20File%20Handling/Day4_Exceptions_and_File_Handling.ipynb)
 [![Training Partner: Edulateral Foundation](https://img.shields.io/badge/Partner-Edulateral%20Foundation-blue.svg?style=for-the-badge)](https://edulateral.com)
 [![Institution: GLA University](https://img.shields.io/badge/Institution-GLA%20University-orange.svg?style=for-the-badge)](https://www.gla.ac.in)
 
@@ -12,7 +12,7 @@
 ```text
 Day 04 - Exceptions and File Handling/
 │
-├── Day4_Afternoon_File_Handling_and_Persistence.ipynb # Master Google Colab Notebook (22 cells, 10 challenges)
+├── Day4_Exceptions_and_File_Handling.ipynb # Master Google Colab Notebook (22 cells, 10 challenges)
 ├── presentation_visuals.html                          # 5 Interactive Visual Simulation Labs (100% Light Mode)
 ├── interactive_mcq_quiz.html                          # 40 Placement MCQs Exam Engine with Timer & Feedback
 ├── Python_Day4_Afternoon_Training.pptx                # 24-Slide 16:9 Light-Themed Executive PowerPoint Deck
