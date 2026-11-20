@@ -1,53 +1,37 @@
-# 🎓 GLA University • Python Programming Training
-## **Day 4: Exceptions and File Handling — Afternoon Session (3 Hours)**
-### **Curriculum: open(), Context Managers, 8 File Modes (r, w, a, r+, rb, wb), 10 Methods (seek, tell, truncate) & CSV/Binary Persistence**
+# 🎓 GLA University • Python Programming Masterclass
+## **Day 4 (Full Day): Exception Handling & File Handling**
+### *Forenoon & Afternoon Sessions • "Utkarsh 2026" Story Edition (415 Cells, 12 Chapters, 60 WAPs)*
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Shivam990q/Python-Programming-Training/blob/main/Day%2004%20-%20Exceptions%20and%20File%20Handling/Day4_Exceptions_and_File_Handling.ipynb)
-[![Training Partner: Edulateral Foundation](https://img.shields.io/badge/Partner-Edulateral%20Foundation-blue.svg?style=for-the-badge)](https://edulateral.com)
-[![Institution: GLA University](https://img.shields.io/badge/Institution-GLA%20University-orange.svg?style=for-the-badge)](https://www.gla.ac.in)
+[![Live Web Portal](https://img.shields.io/badge/Live%20Portal-Interactive%20Labs%20%26%20MCQs-brightgreen.svg?style=for-the-badge)](https://shivam990q.github.io/Python-Programming-Training/)
 
 ---
 
-## 📂 Day 4 Afternoon Package Files
+## 📂 Day 4 Package Structure
+
 ```text
 Day 04 - Exceptions and File Handling/
-│
-├── Day4_Exceptions_and_File_Handling.ipynb # Master Google Colab Notebook (22 cells, 10 challenges)
-├── presentation_visuals.html                          # 5 Interactive Visual Simulation Labs (100% Light Mode)
-├── interactive_mcq_quiz.html                          # 40 Placement MCQs Exam Engine with Timer & Feedback
-├── Python_Day4_Afternoon_Training.pptx                # 24-Slide 16:9 Light-Themed Executive PowerPoint Deck
-├── assets/
-│   ├── edulateral_logo.jpg                            # Official Edulateral branding asset
-│   └── logo_b64.txt                                   # Embedded Base64 image
-└── README.md                                          # Trainer & Student Lesson Guide (this document)
+├── Day4_Exceptions_and_File_Handling.ipynb # Full-Day Google Colab Master Notebook (415 cells, 12 chapters)
+├── Day4_Exceptions_and_File_Handling.pptx  # 24-Slide 16:9 Widescreen Presentation Deck
+├── presentation_visuals.html               # 5 Interactive Visual Simulation Labs (100% Light Mode)
+├── interactive_mcq_quiz.html               # 40 Placement MCQs Engine with Timer & Instant Feedback
+├── assets/                                 # Institutional brand assets
+└── README.md                               # Day 4 Full-Day Curriculum Guide
 ```
 
 ---
 
-## ⏱️ 3-Hour Session Timeline & Lesson Plan
+## 🗺️ Full-Day Chapter Roadmap
 
-| Minute Range | Topic Module | Pedagogical Objectives & Live Demonstrations | Key Placement Traps Addressed |
-| :---: | :--- | :--- | :--- |
-| **00 – 30 min** | **File Architecture & Context Managers** | `open()`, OS file descriptors, `__enter__` / `__exit__`, `with` statement, explicit UTF-8 encoding. | Leaked file descriptors on unhandled exceptions; `UnicodeDecodeError` on Windows cp1252. |
-| **30 – 65 min** | **The Complete 8-Mode Matrix** | `r`, `w`, `a`, `r+`, `w+`, `a+`, `rb`, `wb`. Overwriting vs appending vs creating. | **The 'w' Mode Trap:** opening in `'w'` wipes the file to 0 bytes instantly before writing! |
-| **65 – 110 min** | **10 Core Methods: seek(), tell(), truncate()** | `read()`, `readline()`, `readlines()`, `write()`, `writelines()`, `seek(offset, whence)`, `tell()`, `flush()`, `close()`, `truncate()`. | `writelines()` not appending `\n`; `seek()` in text mode only supporting `whence=0` for non-zero offsets. |
-| **110 – 145 min** | **CSV Parsing & Binary Streams** | `csv.reader`, `csv.writer(newline='')`, `csv.DictReader`, bytes serialization, chunked buffering. | Blank rows on Windows without `newline=''`; memory exhaustion reading multi-GB files. |
-| **145 – 180 min** | **10 Hands-On Challenges & Placement Quiz** | 10 automated unit-tested coding tasks and 40 placement MCQs with instant feedback. | End-to-end placement readiness validation. |
-
----
-
-## 🏆 Top 10 Placement & Exam Traps Quick Reference
-
-1. **The 'w' Mode Trap:** Mode `'w'` truncates the file to 0 bytes immediately upon opening.
-2. **Always Use `with` Statement:** Guarantees `f.close()` is executed even during unhandled exceptions.
-3. **`newline=''` in CSV Writing:** Omitting `newline=''` on Windows creates blank lines between CSV rows.
-4. **`writelines()` Does NOT Append `\n`:** You must explicitly append `\n` to strings.
-5. **Memory-Efficient File Reading:** Use `for line in f:` rather than `f.readlines()` on large files.
-6. **`f.tell()` Returns Byte Offset:** Returns byte integer offset, not character or line count.
-7. **`f.read()` at EOF:** Returns empty string `""` without raising errors.
-8. **Closed File I/O Trap:** Accessing `f.read()` outside the `with` block raises `ValueError: I/O operation on closed file`.
-9. **`seek()` in Text Mode:** Non-zero offsets relative to current (1) or EOF (2) are forbidden in Python 3 text streams.
-10. **Binary Mode Types:** `'rb'` and `'wb'` strictly process `bytes` objects, not strings.
-
----
-&copy; 2026 **Edulateral Foundation** • Designed exclusively for GLA University Python Training Programs.
+| Chapter | Session | Topic | Practical WAPs |
+|:---:|:---:|:---|:---:|
+| **1** | ☀️ Forenoon | **Errors vs Exceptions:** `SyntaxError` vs Runtime Exceptions vs Logical Errors, Reading Tracebacks, Hierarchy | WAP 1.1 – 1.5 |
+| **2** | ☀️ Forenoon | **Common Exceptions:** `ZeroDivisionError`, `ValueError` vs `TypeError`, `IndexError`, `KeyError`, `FileNotFoundError`, LBYL vs EAFP | WAP 2.1 – 2.5 |
+| **3** | ☀️ Forenoon | **`try-except` Safety Net:** `as e`, Multiple `except` Blocks, Catching Tuples, Specific-Before-General Order, Retry Loops | WAP 3.1 – 3.5 |
+| **4** | ☀️ Forenoon | **`else` & `finally`:** 4-Part Flow (`try/except/else/finally`), Cleanup Guarantee, `finally` Return Gotcha | WAP 4.1 – 4.5 |
+| **5** | ☀️ Forenoon | **`raise` & `assert`:** Raising Exceptions, Bare `raise`, Exception Chaining (`raise ... from e`), `assert` vs `raise` | WAP 5.1 – 5.5 |
+| **6** | ☀️ Forenoon | **User-Defined Custom Exceptions:** Subclassing `Exception`, Custom Attributes & Domain Error Hierarchies | WAP 6.1 – 6.5 |
+| **7** | 🌤️ Afternoon | **File Handling Basics:** RAM vs Disk, `open()`, `close()`, `with` Context Manager, `f.closed`, `f.mode`, `f.name` | WAP 7.1 – 7.5 |
+| **8** | 🌤️ Afternoon | **File Modes:** `'r'`, `'w'` (Truncation Trap), `'a'`, `'x'`, `'r+'`, `'w+'`, `'a+'`, Binary Modes (`'rb'`, `'wb'`) | WAP 8.1 – 8.5 |
+| **9–10** | 🌤️ Afternoon | **Reading & Writing Files:** `read()`, `readline()`, `readlines()`, `for line in f:`, `write()`, `writelines()`, `flush()` | WAP 9.1 – 10.5 |
+| **11–12** | 🌤️ Afternoon | **Cursor Navigation & Text Workflows:** `seek(offset, whence)`, `tell()`, `truncate()`, `encoding="utf-8"`, Safe Save | WAP 11.1 – 12.5 |

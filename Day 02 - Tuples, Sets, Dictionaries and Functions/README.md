@@ -1,53 +1,39 @@
-# 🎓 GLA University • Python Programming Training
-## **Day 2: Tuples, Sets, Dictionaries & Functions — Afternoon Session (3 Hours)**
-### **Curriculum: Functions Anatomy, Arguments, LEGB Scope Hierarchy, Closures & Functional Programming (Lambda, Map, Filter, Reduce)**
+# 🎓 GLA University • Python Programming Masterclass
+## **Day 2 (Full Day): Tuples, Sets, Dictionaries, Functions & Functional Programming**
+### *Forenoon & Afternoon Sessions • "Utkarsh 2026" Story Edition (415 Cells, 15 Chapters, 75 WAPs)*
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Shivam990q/Python-Programming-Training/blob/main/Day%2002%20-%20Tuples%2C%20Sets%2C%20Dictionaries%20and%20Functions/Day2_Tuples_Sets_Dictionaries_and_Functions.ipynb)
-[![Training Partner: Edulateral Foundation](https://img.shields.io/badge/Partner-Edulateral%20Foundation-blue.svg?style=for-the-badge)](https://edulateral.com)
-[![Institution: GLA University](https://img.shields.io/badge/Institution-GLA%20University-orange.svg?style=for-the-badge)](https://www.gla.ac.in)
+[![Live Web Portal](https://img.shields.io/badge/Live%20Portal-Interactive%20Labs%20%26%20MCQs-brightgreen.svg?style=for-the-badge)](https://shivam990q.github.io/Python-Programming-Training/)
 
 ---
 
-## 📂 Day 2 Afternoon Package Files
+## 📂 Day 2 Package Structure
+
 ```text
 Day 02 - Tuples, Sets, Dictionaries and Functions/
-│
-├── Day2_Tuples_Sets_Dictionaries_and_Functions.ipynb # Master Google Colab Notebook (22 cells, 10 challenges)
-├── presentation_visuals.html                                       # 5 Interactive Visual Simulation Labs (100% Light Mode)
-├── interactive_mcq_quiz.html                                       # 40 Placement MCQs Exam Engine with Timer & Feedback
-├── Python_Day2_Afternoon_Training.pptx                             # 24-Slide 16:9 Light-Themed Executive PowerPoint Deck
-├── assets/
-│   ├── edulateral_logo.jpg                                         # Official Edulateral branding asset
-│   └── logo_b64.txt                                                # Embedded Base64 image
-└── README.md                                                       # Trainer & Student Lesson Guide (this document)
+├── Day2_Tuples_Sets_Dictionaries_and_Functions.ipynb # Full-Day Google Colab Master Notebook (415 cells, 15 chapters)
+├── Day2_Tuples_Sets_Dictionaries_and_Functions.pptx  # 24-Slide 16:9 Widescreen Presentation Deck
+├── presentation_visuals.html                         # 5 Interactive Visual Simulation Labs (100% Light Mode)
+├── interactive_mcq_quiz.html                         # 40 Placement MCQs Engine with Timer & Instant Feedback
+├── assets/                                           # Institutional brand assets
+└── README.md                                         # Day 2 Full-Day Curriculum Guide
 ```
 
 ---
 
-## ⏱️ 3-Hour Session Timeline & Lesson Plan
+## 🗺️ Full-Day Chapter Roadmap
 
-| Minute Range | Topic Module | Pedagogical Objectives & Live Demonstrations | Key Placement Traps Addressed |
-| :---: | :--- | :--- | :--- |
-| **00 – 30 min** | **Functions Anatomy & Returns** | `def` keyword, first-class functions, returning multiple values as tuples, PEP 257 docstrings (`__doc__`, `help()`). | Forgetting return returning `None`; treating return tuples as multiple scalar variables. |
-| **30 – 70 min** | **Arguments & Packing/Unpacking** | Positional, keyword, default parameters, `*args` tuple packing, `**kwargs` dict packing, positional-only `/` and keyword-only `*`. | **The Mutable Default Trap:** `def f(x=[])` sharing list across calls! |
-| **70 – 110 min** | **LEGB Scope & Closures** | Local -> Enclosing -> Global -> Built-in. `global` vs `nonlocal` keywords; lexical scope retention; factory functions and closures. | `UnboundLocalError` on modifying globals; closure late-binding loop trap `[lambda: i for i in range(3)]`. |
-| **110 – 140 min** | **Lambda & Higher-Order Sorts** | Syntax: `lambda args: expr`. Conditional lambdas, multi-key sorting with `sorted(..., key=lambda x: (-gpa, backlogs))`. | SyntaxError on using statements like `return` or `for` inside lambda bodies. |
-| **140 – 180 min** | **map(), filter(), reduce() & Pipelines** | Lazy generators in Python 3; `filter(None, ...)` truthiness stripping; `functools.reduce()` accumulators; pipeline chaining vs comprehensions. | Performance trade-offs: C-loop `LIST_APPEND` in comprehensions vs function stack overhead. |
-
----
-
-## 🏆 Top 10 Placement & Exam Traps Quick Reference
-
-1. **The Mutable Default Trap:** Default arguments are evaluated once at definition time. Always use `def f(x=None): if x is None: x = []`.
-2. **UnboundLocalError:** Assigning to a variable anywhere in a function body makes it local to the entire function. Use `global` or `nonlocal` before mutating.
-3. **Closure Late-Binding Trap:** Lambdas inside loops capture variables by reference, not by value. Use default arguments `lambda i=i: i` to freeze values.
-4. **Multiple Returns are Tuples:** `return a, b, c` creates an immutable 3-tuple `(a, b, c)`.
-5. **Shortest Iterable in `map()`:** When multiple iterables are provided to `map()`, processing stops at the shortest iterable length.
-6. **`filter(None, seq)`:** Strips all falsy values (`0`, `""`, `None`, `False`, `[]`) efficiently.
-7. **`reduce()` on Empty Sequences:** Raises `TypeError` unless an initializer value is provided.
-8. **Positional-Only vs Keyword-Only:** Parameters before `/` must be positional; parameters after `*` must be keyword-only.
-9. **Lambdas Cannot Contain Statements:** `lambda x: return x` is a fatal `SyntaxError`.
-10. **Comprehensions vs map/filter:** List comprehensions run in optimized C bytecode without the Python function call frame overhead per item.
-
----
-&copy; 2026 **Edulateral Foundation** • Designed exclusively for GLA University Python Training Programs.
+| Chapter | Session | Topic | Practical WAPs |
+|:---:|:---:|:---|:---:|
+| **1** | ☀️ Forenoon | **Tuples:** Creation, Single-Element Comma Trap, Indexing, Slicing, Immutability, Packing & Unpacking | WAP 1.1 – 1.5 |
+| **2** | ☀️ Forenoon | **12 Tuple Tools:** `count`, `index`, `len`, `min`, `max`, `sum`, `sorted`, `tuple`, `reversed`, `any`, `all`, `enumerate` | WAP 2.1 – 2.5 |
+| **3** | ☀️ Forenoon | **Sets:** Uniqueness, Empty Set `{}` vs `set()`, Unordered/No Indexing, Hashable Elements Rule | WAP 3.1 – 3.5 |
+| **4** | ☀️ Forenoon | **15 Set Methods:** `add`, `update`, `remove` vs `discard`, `pop`, `clear`, `copy`, Union `|`, Intersection `&`, Difference `-`, Symmetric Diff `^`, Subset/Superset/Disjoint | WAP 4.1 – 4.5 |
+| **5** | ☀️ Forenoon | **Dictionaries:** Key-Value Pairs, Access, Add/Update, `in` on Keys, Loops & Nested Dictionaries | WAP 5.1 – 5.5 |
+| **6** | ☀️ Forenoon | **15 Dictionary Tools:** `get`, `keys`, `values`, `items`, `update`, `setdefault`, `fromkeys`, `pop`, `popitem`, `del`, `clear`, `copy`, Word Frequency Counter | WAP 6.1 – 6.5 |
+| **7** | ☀️ Forenoon | **Dictionary Comprehension & Sorting:** `{k: v for ...}`, Sorting by Value with `key=lambda kv: kv[1]` | WAP 7.1 – 7.5 |
+| **8** | 🌤️ Afternoon | **Functions:** `def`, `return` vs `print`, Returning Multiple Values (Tuple), Docstrings (`__doc__`) | WAP 8.1 – 8.5 |
+| **9** | 🌤️ Afternoon | **Function Arguments:** Positional, Keyword, Default (Mutable Default Trap), `*args`, `**kwargs`, Unpacking | WAP 9.1 – 9.5 |
+| **10** | 🌤️ Afternoon | **Variable Scope:** Local vs Global, `global` keyword, `UnboundLocalError`, Nested Functions, `nonlocal`, LEGB Rule | WAP 10.1 – 10.5 |
+| **11** | 🌤️ Afternoon | **Lambda Functions:** Anonymous One-Line Functions, Conditional Lambda, `sorted`/`min`/`max` with `key=` | WAP 11.1 – 11.5 |
+| **12–15** | 🌤️ Afternoon | **Functional Programming Pipelines:** `map()`, `filter()`, `functools.reduce()`, Lazy Iterators & Combined Pipelines | WAP 12.1 – 15.5 |
