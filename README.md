@@ -54,7 +54,7 @@ Python Programming Training/
 │   └── README.md                                     # Day 4 Detailed Timeline, Checklist & Traps
 │
 └── Day 05 - Regex and Projects/                      # Day 5: Regular Expressions & 6 Capstone Placement Projects
-    ├── Day5_Regex_and_Capstone_Projects.ipynb        # Full-Day Colab Notebook (Regex + 6 Complete Projects)
+    ├── Day5_Regex_and_Capstone_Projects.ipynb        # Full-Day Colab Notebook (366 cells, 13 chapters, Regex + SQLite3 + 6 Projects)
     ├── presentation_visuals.html                     # 6 Interactive Project Simulators (Contact Book, ATM, etc.)
     ├── interactive_mcq_quiz.html                     # 40 Placement System Design MCQs with Timer & Feedback
     ├── Day5_Regex_and_Capstone_Projects.pptx           # 24-Slide 16:9 Light-Themed Executive PowerPoint Deck
